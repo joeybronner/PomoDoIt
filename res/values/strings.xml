@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PomoDoIt</string>
+    <string name="app_slogan">It\u0027s time to do it\u0021</string>
+    <string name="action_settings">Settings</string>
+    <string name="timerVal">25:00:00</string>
+    <string name="btStartEnd">Commencer!</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
