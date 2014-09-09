@@ -7,6 +7,10 @@
     <string name="timerVal">25:00:00</string>
     <string name="btStartEnd">Commencer!</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="felicitations">FELICITATIONS!</string>
+    <string name="submit">Valider</string>
+    <string name="title_activity_name_and_note">NameAndNoteActivity</string>
+    <string name="title_activity_pause">PauseActivity</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>

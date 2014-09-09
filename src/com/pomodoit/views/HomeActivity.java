@@ -1,4 +1,6 @@
-package com.example.pomodoit;
+package com.pomodoit.views;
+
+import com.example.pomodoit.R;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -18,19 +20,21 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
  
 public class HomeActivity extends Activity implements OnItemClickListener
 {
  
-    static final String EXTRA_MAP = "map";
+    //static final String EXTRA_MAP = "map";
     private TextView tvTitre;
- 
+    private String _errormsg;
     static final LauncherIcon[] ICONS =
     {
-    	new LauncherIcon(R.drawable.im_start, "Nouvelle activité", "metro.png"),
-        new LauncherIcon(R.drawable.im_stats, "Statistiques", "rer.png"),
-        new LauncherIcon(R.drawable.im_aide, "Aide", "bus.png"),
-        new LauncherIcon(R.drawable.im_preferences, "Préférences", "noctilien.png"),
+    	// LauncherIcon (<icon>, <text>, <id>)
+    	new LauncherIcon(R.drawable.im_start, "Nouvelle activité", "new_activity"),
+        new LauncherIcon(R.drawable.im_stats, "Statistiques", "stats"),
+        new LauncherIcon(R.drawable.im_aide, "Aide", "help"),
+        new LauncherIcon(R.drawable.im_preferences, "Préférences", "settings"),
     };
  
     @Override
@@ -43,14 +47,16 @@ public class HomeActivity extends Activity implements OnItemClickListener
         gridview.setAdapter(new ImageAdapter(this));
         gridview.setOnItemClickListener(this);
         
-        /* action bar color */
+        // Actionbar color
         ActionBar bar = getActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#c0392b")));
  
         // Hack to disable GridView scrolling
-        gridview.setOnTouchListener(new OnTouchListener() {
+        gridview.setOnTouchListener(new OnTouchListener()
+        {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public boolean onTouch(View v, MotionEvent event)
+            {
                 return event.getAction() == MotionEvent.ACTION_MOVE;
             }
         });
@@ -59,17 +65,41 @@ public class HomeActivity extends Activity implements OnItemClickListener
     @Override
     public void onItemClick(AdapterView<?> parent, View v, int position, long id)
     {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(EXTRA_MAP, ICONS[position].map);
-        startActivity(intent);
+    	// here, redirect to the good view
+    	String icon_selected = ICONS[position].map;
+    	if (icon_selected.equals("new_activity"))
+    	{
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+    	}
+    	else if (icon_selected.equals("stats"))
+    	{
+   
+    	}
+    	else if (icon_selected.equals("help"))
+    	{
+    		
+    	}
+    	else if (icon_selected.equals("settings"))
+    	{
+    		
+    	}
+    	else
+    	{
+    		_errormsg = "Erreur lors de l'ouverture d'une vue.";
+    		Toast toast = Toast.makeText(this, "Erreur: " + _errormsg, Toast.LENGTH_LONG);
+    		toast.show();
+    	}
     }
  
-    static class LauncherIcon {
+    static class LauncherIcon
+    {
         final String text;
         final int imgId;
         final String map;
  
-        public LauncherIcon(int imgId, String text, String map) {
+        public LauncherIcon(int imgId, String text, String map)
+        {
             super();
             this.imgId = imgId;
             this.text = text;
@@ -78,39 +108,47 @@ public class HomeActivity extends Activity implements OnItemClickListener
  
     }
  
-    static class ImageAdapter extends BaseAdapter {
+    static class ImageAdapter extends BaseAdapter
+    {
         private Context mContext;
  
-        public ImageAdapter(Context c) {
+        public ImageAdapter(Context c)
+        {
             mContext = c;
         }
  
         @Override
-        public int getCount() {
+        public int getCount()
+        {
             return ICONS.length;
         }
  
         @Override
-        public LauncherIcon getItem(int position) {
+        public LauncherIcon getItem(int position)
+        {
             return null;
         }
  
         @Override
-        public long getItemId(int position) {
+        public long getItemId(int position)
+        {
             return 0;
         }
  
-        static class ViewHolder {
+        static class ViewHolder
+        {
             public ImageView icon;
             public TextView text;
         }
  
         // Create a new ImageView for each item referenced by the Adapter
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent)
+        {
             View v = convertView;
             ViewHolder holder;
-            if (v == null) {
+            if (v == null)
+            {
                 LayoutInflater vi = (LayoutInflater) mContext.getSystemService(
                     Context.LAYOUT_INFLATER_SERVICE);
  
@@ -119,7 +157,9 @@ public class HomeActivity extends Activity implements OnItemClickListener
                 holder.text = (TextView) v.findViewById(R.id.dashboard_icon_text);
                 holder.icon = (ImageView) v.findViewById(R.id.dashboard_icon_img);
                 v.setTag(holder);
-            } else {
+            }
+            else
+            {
                 holder = (ViewHolder) v.getTag();
             }
  

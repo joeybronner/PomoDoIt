@@ -13,22 +13,32 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <!-- MAIN ACTIVITY -->
         <activity
-            android:name=".MainActivity"
+            android:name="com.pomodoit.views.MainActivity"
             android:label="@string/app_slogan"
             android:screenOrientation="portrait" >
         </activity>
         <!-- HOME ACTIVITY -->
         <activity
-            android:name=".HomeActivity"
+            android:name="com.pomodoit.views.HomeActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_home"
-    		android:configChanges="orientation"
-    		android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.pomodoit.views.NameAndNoteActivity"
+            android:label="@string/title_activity_name_and_note" >
+        </activity>
+        <activity
+            android:name="com.pomodoit.views.PauseActivity"
+            android:label="@string/title_activity_pause" >
         </activity>
     </application>
 
