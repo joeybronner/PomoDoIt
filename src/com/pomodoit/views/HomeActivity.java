@@ -1,12 +1,11 @@
 package com.pomodoit.views;
 
-import com.example.pomodoit.R;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,12 +20,14 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.pomodoit.R;
+import com.pomodoit.util.Constants;
  
 public class HomeActivity extends Activity implements OnItemClickListener
 {
  
     //static final String EXTRA_MAP = "map";
-    private TextView tvTitre;
     private String _errormsg;
     static final LauncherIcon[] ICONS =
     {
@@ -49,8 +50,11 @@ public class HomeActivity extends Activity implements OnItemClickListener
         
         // Actionbar color
         ActionBar bar = getActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#c0392b")));
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed))));
  
+        // Type face 
+        Constants.tf = Typeface.createFromAsset(this.getAssets(),"fonts/OpenSans-Light.ttf");
+        
         // Hack to disable GridView scrolling
         gridview.setOnTouchListener(new OnTouchListener()
         {
@@ -74,7 +78,7 @@ public class HomeActivity extends Activity implements OnItemClickListener
     	}
     	else if (icon_selected.equals("stats"))
     	{
-   
+    		
     	}
     	else if (icon_selected.equals("help"))
     	{

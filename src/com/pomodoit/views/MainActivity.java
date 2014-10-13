@@ -1,34 +1,33 @@
 package com.pomodoit.views;
 
-import com.example.pomodoit.R;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.pomodoit.R;
+import com.pomodoit.util.Constants;
+
 public class MainActivity extends Activity
-{
-	
+{	
 	/* global vars */
 	private long startTime = 0L;
 	long timeInMilliseconds = 0L;
 	long timeSwapBuff = 0L;
 	long updatedTime = 0L;
 	protected ProgressBar mProgressBar;
-	private Typeface tf;
+	
 	
 	/* elements */
 	private TextView tvTimer, tvMessage;
@@ -44,27 +43,24 @@ public class MainActivity extends Activity
 		
         /* action bar color */
         ActionBar bar = getActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#c0392b")));
-        
-        /* new type face */
-        tf = Typeface.createFromAsset(this.getAssets(),"fonts/basictitlefont.ttf");
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed))));
         
         /* progress bar */
         mProgressBar = (ProgressBar)findViewById(R.id.progressBar);
         
         /* type face font for timer */
         tvTimer = (TextView) findViewById(R.id.timerValue);
-        tvTimer.setTypeface(tf);
-        tvTimer.setTextSize(120);
+        tvTimer.setTypeface(Constants.tf);
+        tvTimer.setTextSize(80);
         
         /* type face font for message textview */
         tvMessage = (TextView) findViewById(R.id.tvMessage);
-        tvMessage.setTypeface(tf);
+        tvMessage.setTypeface(Constants.tf);
         		
         /* type face font for the button */
         bt = (Button) findViewById(R.id.btMain);
-        bt.setTypeface(tf);
-        bt.setTextSize(40);
+        bt.setTypeface(Constants.tf);
+        bt.setTextSize(30);
         bt.setOnClickListener(new View.OnClickListener()
         {
         	@Override

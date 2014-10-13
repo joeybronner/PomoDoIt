@@ -24,21 +24,23 @@
         <activity
             android:name="com.pomodoit.views.HomeActivity"
             android:configChanges="orientation"
-            android:label="@string/title_activity_home"
-            android:screenOrientation="portrait" >
+            android:label="@string/title_activity_home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- NAME AND NOTE ACTIVITY -->
         <activity
             android:name="com.pomodoit.views.NameAndNoteActivity"
-            android:label="@string/title_activity_name_and_note" >
+            android:label="@string/title_activity_name_and_note"
+            android:screenOrientation="portrait" >
         </activity>
+        <!-- PAUSE ACTIVITY -->
         <activity
             android:name="com.pomodoit.views.PauseActivity"
-            android:label="@string/title_activity_pause" >
+            android:label="@string/title_activity_pause"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

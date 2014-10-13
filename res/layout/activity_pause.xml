@@ -6,7 +6,128 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#197519"
+    android:background="@color/fontGreen"
     tools:context="com.pomodoit.views.PauseActivity" >
+    
+    <ProgressBar
+        android:id="@+id/progressBarPause"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="20dip" 
+		android:maxHeight="20dip"
+		android:progressDrawable="@drawable/progressbar_color_pause" />
+     
+    <TextView
+        android:id="@+id/timerPauseValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBarPause"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/timerPauseVal"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:textColor="#ffffff"
+        android:textSize="50sp" />
+    
+    <TextView
+        android:id="@+id/tvPauseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/msgPause"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:layout_alignParentBottom="true"
+        android:maxLines="1"
+        android:singleLine="true" />
+    
+	<ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/timerPauseValue"
+        android:layout_above="@id/tvPauseTitle"
+        android:flipInterval="4000"
+        android:inAnimation="@android:anim/slide_in_left"
+        android:outAnimation="@android:anim/slide_out_right"
+        android:layout_centerInParent="true">
+        <!-- android:padding="70dp" -->
+        
+		<ImageView
+            android:src="@drawable/img1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/str_img1"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".75"/>
+ 
+        <ImageView
+            android:src="@drawable/img2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/str_img2"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".75"/>
+ 
+        <ImageView
+            android:src="@drawable/img3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/str_img3"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".75"/>
+ 
+        <ImageView
+            android:src="@drawable/img4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/str_img4"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".75"/>
+ 
+        <ImageView
+            android:src="@drawable/img5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/str_img5"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".75"/>
+        
+        <ImageView
+            android:src="@drawable/img6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/str_img6"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".75"/>
+ 
+        <ImageView
+            android:src="@drawable/img7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/str_img7"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".75"/>
+ 
+        <ImageView
+            android:src="@drawable/img8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/str_img8"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".75"/>
+        
+        <ImageView
+            android:src="@drawable/img9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/str_img8"
+            android:layout_gravity="center_horizontal"
+            android:alpha=".75"/>
+    </ViewFlipper>
 
+        
 </RelativeLayout>

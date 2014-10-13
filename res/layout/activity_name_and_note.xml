@@ -23,7 +23,8 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tvFelicitations"
         android:layout_marginTop="20dp"
-        android:ems="10" />
+        android:ems="10"
+        android:background="@drawable/edittext_style" />
 
     <RatingBar
         android:id="@+id/ratingSession"
@@ -32,7 +33,8 @@
         android:layout_below="@+id/etName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:minHeight="57dp" />
+        android:minHeight="57dp"
+        style="@style/RatingBarPomoDoIt" />
 
     <Button
         android:id="@+id/btSubmit"
