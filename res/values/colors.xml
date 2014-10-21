@@ -4,5 +4,6 @@
     <color name="fontRed">#E74C3C</color>
     <color name="fontDarkRed">#c0392b</color>
     <color name="fontGreen">#00B16A</color>
+    <color name="white">#FFFFFF</color>
     <!-- darkred D64541 -->
 </resources>

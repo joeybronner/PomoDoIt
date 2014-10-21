@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.pomodoit.views.NameAndNoteActivity" >
+
+    <ImageView
+        android:id="@+id/ivTaskOk"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_centerHorizontal="true"
+        android:alpha=".75"
+        android:src="@drawable/task_ok" />
+
+    <TextView
+        android:id="@+id/tvNewSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/nouvellesession"
+        android:layout_below="@+id/ivTaskOk"
+        android:textSize="25sp"
+        android:textColor="@color/fontGreen" />
+
+    <Button
+        android:id="@+id/btNo"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tvNewSession"
+        android:layout_below="@+id/tvNewSession"
+        android:text="@string/non"
+        android:background="@android:color/transparent"
+        android:textColor="@color/fontGreen" />
+
+    <Button
+        android:id="@+id/btYes"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/tvNewSession"
+        android:layout_below="@+id/tvNewSession"
+        android:text="@string/oui"
+        android:background="@android:color/transparent"
+        android:textColor="@color/fontGreen" />
+
+</RelativeLayout>

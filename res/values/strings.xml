@@ -9,11 +9,13 @@
     <string name="btStartEnd">Commencer!</string>
     <string name="title_activity_home">PomoDoIt</string>
     <string name="felicitations">FELICITATIONS!</string>
+    <string name="nouvellesession">Voulez-vous commencer une nouvelle session ?</string>
     <string name="submit">Valider</string>
+    <string name="oui">Oui</string>
+    <string name="non">Non</string>
     <string name="title_activity_name_and_note">Name it</string>
     <string name="title_activity_pause">C\u0027est la pause\u0021</string>
     <string name="hello_world">Hello world!</string>
-    
     <string name="msgPause">C\u0027est la pause, detends-toi...</string>
     <string name="msgPause1">CAFE ?</string>
     <string name="msgPause2">RESEAU SOCIAUX ?</string>
@@ -21,8 +23,7 @@
     <string name="msgPause4">JOURNAL ?</string>
     <string name="msgPause5">WEB ?</string>
     <string name="msgPause6">LEBONCOIN ?</string>
-    
-	<string name="str_img1">Image1</string>
+    <string name="str_img1">Image1</string>
     <string name="str_img2">Image2</string>
     <string name="str_img3">Image3</string>
     <string name="str_img4">Image4</string>
@@ -31,5 +32,6 @@
     <string name="str_img7">Image7</string>
     <string name="str_img8">Image8</string>
     <string name="str_img9">Image9</string>
+    <string name="title_activity_new_session">NewSessionActivity</string>
 
 </resources>

@@ -15,6 +15,7 @@ public final class R {
         public static final int fontDarkRed=0x7f040002;
         public static final int fontGreen=0x7f040003;
         public static final int fontRed=0x7f040001;
+        public static final int white=0x7f040004;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -60,38 +61,45 @@ public final class R {
         public static final int ratingbar_empty_style=0x7f02001d;
         public static final int ratingbar_filled_style=0x7f02001e;
         public static final int ratingbar_style=0x7f02001f;
+        public static final int task_ok=0x7f020020;
     }
     public static final class id {
-        public static final int action_settings=0x7f090010;
+        public static final int action_settings=0x7f090014;
         public static final int btMain=0x7f090004;
+        public static final int btNo=0x7f09000c;
         public static final int btSubmit=0x7f090009;
+        public static final int btYes=0x7f09000d;
         public static final int dashboard_grid=0x7f090000;
-        public static final int dashboard_icon_img=0x7f09000e;
-        public static final int dashboard_icon_text=0x7f09000f;
+        public static final int dashboard_icon_img=0x7f090012;
+        public static final int dashboard_icon_text=0x7f090013;
         public static final int etName=0x7f090007;
-        public static final int flipper=0x7f09000d;
+        public static final int flipper=0x7f090011;
+        public static final int ivTaskOk=0x7f09000a;
         public static final int mainActivity=0x7f090001;
         public static final int progressBar=0x7f090002;
-        public static final int progressBarPause=0x7f09000a;
+        public static final int progressBarPause=0x7f09000e;
         public static final int ratingSession=0x7f090008;
-        public static final int timerPauseValue=0x7f09000b;
+        public static final int timerPauseValue=0x7f09000f;
         public static final int timerValue=0x7f090003;
         public static final int tvFelicitations=0x7f090006;
         public static final int tvMessage=0x7f090005;
-        public static final int tvPauseTitle=0x7f09000c;
+        public static final int tvNewSession=0x7f09000b;
+        public static final int tvPauseTitle=0x7f090010;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_name_and_note=0x7f030002;
-        public static final int activity_pause=0x7f030003;
-        public static final int dashboard_icon=0x7f030004;
+        public static final int activity_new_session=0x7f030003;
+        public static final int activity_pause=0x7f030004;
+        public static final int dashboard_icon=0x7f030005;
     }
     public static final class menu {
         public static final int home=0x7f080000;
         public static final int main=0x7f080001;
         public static final int name_and_note=0x7f080002;
-        public static final int pause=0x7f080003;
+        public static final int new_session=0x7f080003;
+        public static final int pause=0x7f080004;
     }
     public static final class string {
         public static final int action_settings=0x7f060002;
@@ -99,29 +107,33 @@ public final class R {
         public static final int app_slogan=0x7f060001;
         public static final int btStartEnd=0x7f060005;
         public static final int felicitations=0x7f060007;
-        public static final int hello_world=0x7f06000b;
-        public static final int msgPause=0x7f06000c;
-        public static final int msgPause1=0x7f06000d;
-        public static final int msgPause2=0x7f06000e;
-        public static final int msgPause3=0x7f06000f;
-        public static final int msgPause4=0x7f060010;
-        public static final int msgPause5=0x7f060011;
-        public static final int msgPause6=0x7f060012;
-        public static final int str_img1=0x7f060013;
-        public static final int str_img2=0x7f060014;
-        public static final int str_img3=0x7f060015;
-        public static final int str_img4=0x7f060016;
-        public static final int str_img5=0x7f060017;
-        public static final int str_img6=0x7f060018;
-        public static final int str_img7=0x7f060019;
-        public static final int str_img8=0x7f06001a;
-        public static final int str_img9=0x7f06001b;
-        public static final int submit=0x7f060008;
+        public static final int hello_world=0x7f06000e;
+        public static final int msgPause=0x7f06000f;
+        public static final int msgPause1=0x7f060010;
+        public static final int msgPause2=0x7f060011;
+        public static final int msgPause3=0x7f060012;
+        public static final int msgPause4=0x7f060013;
+        public static final int msgPause5=0x7f060014;
+        public static final int msgPause6=0x7f060015;
+        public static final int non=0x7f06000b;
+        public static final int nouvellesession=0x7f060008;
+        public static final int oui=0x7f06000a;
+        public static final int str_img1=0x7f060016;
+        public static final int str_img2=0x7f060017;
+        public static final int str_img3=0x7f060018;
+        public static final int str_img4=0x7f060019;
+        public static final int str_img5=0x7f06001a;
+        public static final int str_img6=0x7f06001b;
+        public static final int str_img7=0x7f06001c;
+        public static final int str_img8=0x7f06001d;
+        public static final int str_img9=0x7f06001e;
+        public static final int submit=0x7f060009;
         public static final int timerPauseVal=0x7f060004;
         public static final int timerVal=0x7f060003;
         public static final int title_activity_home=0x7f060006;
-        public static final int title_activity_name_and_note=0x7f060009;
-        public static final int title_activity_pause=0x7f06000a;
+        public static final int title_activity_name_and_note=0x7f06000c;
+        public static final int title_activity_new_session=0x7f06001f;
+        public static final int title_activity_pause=0x7f06000d;
     }
     public static final class style {
         /** 

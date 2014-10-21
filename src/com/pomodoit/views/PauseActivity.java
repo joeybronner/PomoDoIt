@@ -2,11 +2,16 @@ package com.pomodoit.views;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -73,7 +78,7 @@ public class PauseActivity extends Activity {
 		public void run()
 		{
 			//timeSwapBuff = 60000*5; // 5 minutes
-			timeSwapBuff = 1000*25;
+			timeSwapBuff = 100*25;
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
 
@@ -88,17 +93,54 @@ public class PauseActivity extends Activity {
 						+ 	String.format("%02d", milliseconds));
 			customHandler.postDelayed(this, 0);
 			
-			/* progressbar update */
+			/* Progress Bar Update */
 			final int progress = (int) (mProgressBar.getMax() * timeInMilliseconds / timeSwapBuff);
 	        mProgressBar.setProgress(progress);
 	        
 	        if (isFinishedTimer(mins, secs, milliseconds))
 	        {
 	        	customHandler.removeCallbacks(this);
-	        	// "Voulez-vous commencer une nouvelle tâche de 25 minutes ?"
+	        	showNewSession();
 	        }
 		}
 	};
+	
+	private void showNewSession()
+	{
+		// create the new dialog
+		final Dialog dialog = new Dialog(tvTimerPause.getContext());
+		// no title
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+		// content of the dialog
+		dialog.setContentView(R.layout.activity_new_session);
+		Button btSubmit = (Button) dialog.findViewById(R.id.btYes);
+		btSubmit.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				/*
+				EditText etName = (EditText) dialog.findViewById(R.id.etName);
+				try { 
+					if (NameAndNoteActivity.isFieldEmpty(etName.getText().toString())) {
+						Toaster.displayToast(PauseActivity.this.getBaseContext(), 
+								"Erreur, veuillez entrer un nom à votre activité.", 
+								3000);
+					} else {
+						// --> send values into database (2 values (name & note))
+						dialog.dismiss();
+						finish();
+						//showPauseView();		
+					}
+				} catch (Exception ex) {
+					// Nothing.
+				}
+				*/
+			}
+		});
+
+		dialog.show();
+	}
 	
 	private boolean isFinishedTimer(int _m, int _s, int _ms)
 	{
