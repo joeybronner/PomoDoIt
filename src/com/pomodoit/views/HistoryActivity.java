@@ -2,6 +2,7 @@ package com.pomodoit.views;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -14,12 +15,15 @@ import android.widget.ListView;
 
 import com.example.pomodoit.R;
 import com.pomodoit.adapter.ListViewAdapter;
+import com.pomodoit.db.MySQLiteHelper;
+import com.pomodoit.db.Session;
 
 @SuppressWarnings("rawtypes")
 public class HistoryActivity extends Activity {
-	
+
 	// Global variables
 	private ArrayList<HashMap> list;
+	MySQLiteHelper db = new MySQLiteHelper(this);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,27 +37,28 @@ public class HistoryActivity extends Activity {
 
 		// ListView of items
 		ListView lview = (ListView) findViewById(R.id.listview);
-        populateList();
-        ListViewAdapter adapter = new ListViewAdapter(this, list);
-        lview.setAdapter(adapter);
+		populateList();
+		ListViewAdapter adapter = new ListViewAdapter(this, list);
+		lview.setAdapter(adapter);
 	}
-	
+
 	private void populateList() {
-    	 
-        list = new ArrayList<HashMap>();
- 
-        for (int i=0; i<50; i++) {
-            HashMap<String, String> temp = new HashMap<String, String>();
-            temp.put("First","YYYY/MM/JJ");
-            temp.put("Second", "Nom de l'activité");
-            temp.put("Third", "Note");
-        list.add(temp);
-        }
-    }
-    
-    // --------------------------------------------------------------------- //
-    // MENU BAR																 //
-    // --------------------------------------------------------------------- //
+
+		list = new ArrayList<HashMap>();
+
+		List<Session> sess = db.getAllSessions();
+		for (final Session s : sess) {
+			HashMap<String, String> temp = new HashMap<String, String>();
+			temp.put("First",s.getDate());
+			temp.put("Second",s.getName());
+			temp.put("Third", String.valueOf(s.getMark()));
+			list.add(temp);
+		}
+	}
+
+	// --------------------------------------------------------------------- //
+	// MENU BAR																 //
+	// --------------------------------------------------------------------- //
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

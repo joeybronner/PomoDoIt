@@ -1,7 +1,5 @@
 package com.pomodoit.views;
 
-import java.util.List;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
@@ -22,10 +20,10 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.pomodoit.R;
-import com.pomodoit.util.Constants;
-import com.pomodoit.util.Toaster;
 import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.db.Session;
+import com.pomodoit.util.Constants;
+import com.pomodoit.util.Toaster;
 
 public class MainActivity extends Activity
 {	
@@ -160,14 +158,6 @@ public class MainActivity extends Activity
 						String name = etName.getText().toString();
 						float mark = stars.getRating();
 						db.addSession(new Session(name, mark));
-						List<Session> sess = db.getAllSessions();
-						for (final Session s : sess) {
-							Toaster.displayToast(MainActivity.this.getBaseContext(), 
-									"name: " + s.getName() + "\n" +
-									"mark: " + s.getMark() + "\n" + 
-									"date: " + s.getDate());
-						}
-						
 						dialog.dismiss();
 						finish();
 						showPauseView();		
