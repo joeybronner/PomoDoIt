@@ -18,7 +18,11 @@
         <activity
             android:name="com.pomodoit.views.MainActivity"
             android:label="@string/app_slogan"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.pomodoit.views.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pomodoit.views.HomeActivity" />
         </activity>
         <!-- HOME ACTIVITY -->
         <activity
@@ -46,6 +50,15 @@
         <activity
             android:name="com.pomodoit.views.NewSessionActivity"
             android:label="@string/title_activity_new_session" >
+        </activity>
+        <!-- HISTORY ACTIVITY -->
+        <activity
+            android:name="com.pomodoit.views.HistoryActivity"
+            android:label="@string/title_activity_history"
+            android:parentActivityName="com.pomodoit.views.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pomodoit.views.HomeActivity" />
         </activity>
     </application>
 
