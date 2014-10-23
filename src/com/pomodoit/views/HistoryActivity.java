@@ -17,6 +17,7 @@ import com.example.pomodoit.R;
 import com.pomodoit.adapter.ListViewAdapter;
 import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.db.Session;
+import com.pomodoit.util.DateFormater;
 
 @SuppressWarnings("rawtypes")
 public class HistoryActivity extends Activity {
@@ -37,19 +38,24 @@ public class HistoryActivity extends Activity {
 
 		// ListView of items
 		ListView lview = (ListView) findViewById(R.id.listview);
-		populateList();
+		try {
+			populateList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		ListViewAdapter adapter = new ListViewAdapter(this, list);
 		lview.setAdapter(adapter);
 	}
 
-	private void populateList() {
+	private void populateList() throws Exception {
 
 		list = new ArrayList<HashMap>();
 
 		List<Session> sess = db.getAllSessions();
 		for (final Session s : sess) {
 			HashMap<String, String> temp = new HashMap<String, String>();
-			temp.put("First",s.getDate());
+			String date = DateFormater.yyyymmddToDDMMYYYY(s.getDate());
+			temp.put("First",date);
 			temp.put("Second",s.getName());
 			temp.put("Third", String.valueOf(s.getMark()));
 			list.add(temp);

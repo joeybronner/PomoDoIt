@@ -55,6 +55,7 @@
         <activity
             android:name="com.pomodoit.views.HistoryActivity"
             android:label="@string/title_activity_history"
+            android:screenOrientation="portrait"
             android:parentActivityName="com.pomodoit.views.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

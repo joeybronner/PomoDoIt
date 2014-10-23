@@ -138,6 +138,7 @@ public class MainActivity extends Activity
 		final Dialog dialog = new Dialog(tvTimer.getContext());
 		// no title
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+		dialog.setCancelable(false);
 		// content of the dialog
 		dialog.setContentView(R.layout.activity_name_and_note);
 		Button btSubmit = (Button) dialog.findViewById(R.id.btSubmit);
@@ -154,7 +155,10 @@ public class MainActivity extends Activity
 								"Erreur, veuillez entrer un nom à votre activité.", 
 								3000);
 					} else {
-						// --> send values into database (2 values (name & note))
+						// Increment Round (number of rounds)
+						Constants.round++;
+						
+						// Send Name & Note to Database
 						String name = etName.getText().toString();
 						float mark = stars.getRating();
 						db.addSession(new Session(name, mark));

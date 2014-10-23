@@ -3,6 +3,7 @@ package com.pomodoit.views;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -111,35 +112,28 @@ public class PauseActivity extends Activity {
 		final Dialog dialog = new Dialog(tvTimerPause.getContext());
 		// no title
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+		dialog.setCancelable(false);
 		// content of the dialog
 		dialog.setContentView(R.layout.activity_new_session);
-		Button btSubmit = (Button) dialog.findViewById(R.id.btYes);
-		btSubmit.setOnClickListener(new OnClickListener()
+		Button btNo = (Button) dialog.findViewById(R.id.btNo);
+		btNo.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
 			{
-				/*
-				EditText etName = (EditText) dialog.findViewById(R.id.etName);
-				try { 
-					if (NameAndNoteActivity.isFieldEmpty(etName.getText().toString())) {
-						Toaster.displayToast(PauseActivity.this.getBaseContext(), 
-								"Erreur, veuillez entrer un nom à votre activité.", 
-								3000);
-					} else {
-						// --> send values into database (2 values (name & note))
-						dialog.dismiss();
-						finish();
-						//showPauseView();		
-					}
-				} catch (Exception ex) {
-					// Nothing.
-				}
-				*/
+				dialog.dismiss();
+				finish();
+				showHomeView();
 			}
 		});
 
 		dialog.show();
+	}
+	
+	private void showHomeView()
+	{
+		Intent intent = new Intent(this, HomeActivity.class);
+		startActivity(intent);
 	}
 	
 	private boolean isFinishedTimer(int _m, int _s, int _ms)

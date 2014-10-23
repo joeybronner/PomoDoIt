@@ -55,6 +55,9 @@ public class HomeActivity extends Activity implements OnItemClickListener
 		// Type face 
 		Constants.tf = Typeface.createFromAsset(this.getAssets(),"fonts/OpenSans-Light.ttf");
 
+		// Reset the number of rounds
+		Constants.round = 0;
+		
 		// Hack to disable GridView scrolling
 		gridview.setOnTouchListener(new OnTouchListener()
 		{

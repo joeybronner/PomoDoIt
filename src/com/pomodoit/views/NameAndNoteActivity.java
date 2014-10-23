@@ -8,7 +8,7 @@ import com.example.pomodoit.R;
 
 public class NameAndNoteActivity extends Activity
 {	
-	/* global vars */
+	// Global Variables
 	private TextView tvFelicitations;
 	
 	@Override
