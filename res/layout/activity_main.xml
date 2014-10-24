@@ -44,7 +44,7 @@
         android:textAlignment="center"
         android:background="@color/fontDarkRed"
         android:textColor="#FFFFFF"
-        android:text="@string/btStartEnd" />
+        android:text="@string/btStart" />
 
     <TextView
         android:id="@+id/tvMessage"
@@ -56,7 +56,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/im_clock"
         android:gravity="center"
-        android:text="ALLEZ,\nT'ES PRET ?\nON COMMENCE ?!"
+        android:text="@string/msg_motive_0"
         android:textColor="#FFFFFF"
         android1:textSize="28sp" />
 

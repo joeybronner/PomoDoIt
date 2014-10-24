@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -57,8 +58,33 @@ public class HistoryActivity extends Activity {
 			String date = DateFormater.yyyymmddToDDMMYYYY(s.getDate());
 			temp.put("First",date);
 			temp.put("Second",s.getName());
-			temp.put("Third", String.valueOf(s.getMark()));
+			temp.put("Third", getStars(HistoryActivity.this.getApplicationContext(), 
+					String.valueOf(s.getMark())));
 			list.add(temp);
+		}
+	}
+	
+	private static String getStars(Context c, String s) throws Exception {
+		if (s.equals("0.0") || s.equals("0.5")) {
+			return "-";
+		}
+		else if (s.equals("1.0") || s.equals("1.5")) {
+			return c.getResources().getString(R.string.one_star);
+		}
+		else if (s.equals("2.0") || s.equals("2.5")) {
+			return c.getResources().getString(R.string.two_star);
+		}
+		else if (s.equals("3.0") || s.equals("3.5")) {
+			return c.getResources().getString(R.string.three_star);
+		}
+		else if (s.equals("4.0") || s.equals("4.5")) {
+			return c.getResources().getString(R.string.four_star);
+		}
+		else if (s.equals("5.0")) {
+			return c.getResources().getString(R.string.five_star);
+		}
+		else {
+			return "-";
 		}
 	}
 

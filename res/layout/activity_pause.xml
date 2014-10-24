@@ -57,76 +57,69 @@
         <!-- android:padding="70dp" -->
         
 		<ImageView
-            android:src="@drawable/img1"
+            android:src="@drawable/im_message"
+            android:contentDescription="@string/str_im_message"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/str_img1"
             android:layout_gravity="center_horizontal"
             android:alpha=".75"/>
  
         <ImageView
-            android:src="@drawable/img2"
+            android:src="@drawable/im_coffee"
+            android:contentDescription="@string/str_im_coffee"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/str_img2"
             android:layout_gravity="center_horizontal"
             android:alpha=".75"/>
  
         <ImageView
-            android:src="@drawable/img3"
+            android:src="@drawable/im_facebook"
+            android:contentDescription="@string/str_im_facebook"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/str_img3"
             android:layout_gravity="center_horizontal"
             android:alpha=".75"/>
  
         <ImageView
-            android:src="@drawable/img4"
+            android:src="@drawable/im_music"
+            android:contentDescription="@string/str_im_music"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/str_img4"
             android:layout_gravity="center_horizontal"
             android:alpha=".75"/>
  
         <ImageView
-            android:src="@drawable/img5"
+            android:src="@drawable/im_linkedin"
+            android:contentDescription="@string/str_im_linkedin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/str_img5"
             android:layout_gravity="center_horizontal"
             android:alpha=".75"/>
         
         <ImageView
-            android:src="@drawable/img6"
+            android:src="@drawable/im_mail"
+            android:contentDescription="@string/str_im_mail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/str_img6"
             android:layout_gravity="center_horizontal"
             android:alpha=".75"/>
  
         <ImageView
-            android:src="@drawable/img7"
+            android:src="@drawable/im_internet"
+            android:contentDescription="@string/str_im_internet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/str_img7"
             android:layout_gravity="center_horizontal"
             android:alpha=".75"/>
  
         <ImageView
-            android:src="@drawable/img8"
+            android:src="@drawable/im_twitter"
+            android:contentDescription="@string/str_im_twitter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/str_img8"
             android:layout_gravity="center_horizontal"
             android:alpha=".75"/>
-        
-        <ImageView
-            android:src="@drawable/img9"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/str_img8"
-            android:layout_gravity="center_horizontal"
-            android:alpha=".75"/>
+
     </ViewFlipper>
 
         

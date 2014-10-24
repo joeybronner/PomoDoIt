@@ -36,13 +36,17 @@ public class Session {
 	}
 
 	public String getDate() {
+		return this.date;
+	}
+	
+	public String createDate() {
 		Calendar c = new GregorianCalendar();
-		int m = c.get(GregorianCalendar.MONTH) + 1;
-		int d = c.get(GregorianCalendar.DATE);
+		int m = c.get(Calendar.MONTH) + 1;
+		int d = c.get(Calendar.DATE);
 		String mm = Integer.toString(m);
 		String dd = Integer.toString(d);
-		return "" + c.get(GregorianCalendar.YEAR) + (m < 10 ? "0" + mm : mm) +
-				(d < 10 ? "0" + dd : dd);
+		return "" + c.get(Calendar.YEAR) + (m < 10 ? "0" + mm : mm) +
+				(d < 10 ? "0" + dd : dd);	
 	}
 
 	public void setDate(String date) {

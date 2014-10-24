@@ -1,38 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- APP GLOBAL -->
     <string name="app_name">PomoDoIt</string>
     <string name="app_slogan">It\u0027s time to do it\u0021</string>
     <string name="action_settings">Settings</string>
+
+    <!-- HOME ACTIVITY -->
+    <string name="new_session">New session</string>
+    <string name="history">History</string>
+    <string name="help">Help</string>
+    <string name="settings">Settings</string>
+
+    <!-- MAIN ACTIVITY -->
+    <string name="btStart">Start!</string>
+    <string name="btStop">Stop</string>
+    <string name="btEnd">End</string>
     <string name="timerVal">25:00:00</string>
+    <string name="msg_motive_0">HEY,\nARE YOU READY\nTO START ?!</string>
+    <string name="msg_motive_1">RULE NR 1\nSTART\nSMALL.\n</string>
+    <string name="msg_motive_2">RULE NR 2\nPROTOTYPE,\nPROTOTYPE,\nPROTOTYPE.</string>
+
+    <!-- NAMEANDNOTE ACTIVITY -->
+    <string name="felicitations">CONGRATS\u0021</string>
+    <string name="submit">Submit</string>
+
+    <!-- NEWSESSION ACTIVITY -->
+    <string name="title_activity_new_session">New Session</string>
+    <string name="nouvellesession">Do you want to start a new session?</string>
+    <string name="oui">Yes</string>
+    <string name="non">No</string>
+
+    <!-- HISTORY ACTIVITY -->
+    <string name="title_activity_history">History</string>
+    <string name="one_star">\u2605</string>
+    <string name="two_star">\u2605\u2605</string>
+	<string name="three_star">\u2605\u2605\u2605</string>
+	<string name="four_star">\u2605\u2605\u2605\u2605</string>
+	<string name="five_star">\u2605\u2605\u2605\u2605\u2605</string>
+	
+    <!-- PAUSE ACTIVITY -->
+    <string name="title_activity_pause">Taking a break from work</string>
+    <string name="msgPause">Coffee time, take a break\u0021</string>
     <string name="timerPauseVal">05:00:00</string>
-    <string name="btStartEnd">Commencer!</string>
-    <string name="title_activity_home">PomoDoIt</string>
-    <string name="felicitations">FELICITATIONS!</string>
-    <string name="nouvellesession">Voulez-vous commencer une nouvelle session ?</string>
-    <string name="submit">Valider</string>
-    <string name="oui">Oui</string>
-    <string name="non">Non</string>
-    <string name="title_activity_name_and_note">Name it</string>
-    <string name="title_activity_pause">C\u0027est la pause\u0021</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="msgPause">C\u0027est la pause, detends-toi...</string>
-    <string name="msgPause1">CAFE ?</string>
-    <string name="msgPause2">RESEAU SOCIAUX ?</string>
-    <string name="msgPause3">SPORT ?</string>
-    <string name="msgPause4">JOURNAL ?</string>
-    <string name="msgPause5">WEB ?</string>
-    <string name="msgPause6">LEBONCOIN ?</string>
-    <string name="str_img1">Image1</string>
-    <string name="str_img2">Image2</string>
-    <string name="str_img3">Image3</string>
-    <string name="str_img4">Image4</string>
-    <string name="str_img5">Image5</string>
-    <string name="str_img6">Image6</string>
-    <string name="str_img7">Image7</string>
-    <string name="str_img8">Image8</string>
-    <string name="str_img9">Image9</string>
-    <string name="title_activity_new_session">Nouvelle session</string>
-    <string name="title_activity_history">Historique</string>
+    
+    <!-- HELP ACTIVITY -->
+    <string name="title_activity_help">Help</string>
+
+    <!-- SLIDING IMAGES -->
+    <string name="str_im_message">Message</string>
+    <string name="str_im_coffee">Coffee</string>
+    <string name="str_im_facebook">Facebook</string>
+    <string name="str_im_music">Music</string>
+    <string name="str_im_linkedin">LinkedIn</string>
+    <string name="str_im_mail">Mail</string>
+    <string name="str_im_internet">Internet</string>
+    <string name="str_im_twitter">Twitter</string>
+
+    <!-- ERROR MESSAGES -->
+    <string name="err_loading_view">Error while loading a new view</string>
+    <string name="err_noname">Error: Please give a name of your activity"</string>
 
 </resources>

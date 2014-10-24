@@ -18,8 +18,8 @@
         <activity
             android:name="com.pomodoit.views.MainActivity"
             android:label="@string/app_slogan"
-            android:screenOrientation="portrait"
-            android:parentActivityName="com.pomodoit.views.HomeActivity" >
+            android:parentActivityName="com.pomodoit.views.HomeActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pomodoit.views.HomeActivity" />
@@ -27,8 +27,7 @@
         <!-- HOME ACTIVITY -->
         <activity
             android:name="com.pomodoit.views.HomeActivity"
-            android:configChanges="orientation"
-            android:label="@string/title_activity_home" >
+            android:configChanges="orientation" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +37,6 @@
         <!-- NAME AND NOTE ACTIVITY -->
         <activity
             android:name="com.pomodoit.views.NameAndNoteActivity"
-            android:label="@string/title_activity_name_and_note"
             android:screenOrientation="portrait" >
         </activity>
         <!-- PAUSE ACTIVITY -->
@@ -55,7 +53,23 @@
         <activity
             android:name="com.pomodoit.views.HistoryActivity"
             android:label="@string/title_activity_history"
-            android:screenOrientation="portrait"
+            android:parentActivityName="com.pomodoit.views.HomeActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pomodoit.views.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.pomodoit.views.HelpActivity"
+            android:label="@string/title_activity_help"
+            android:parentActivityName="com.pomodoit.views.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pomodoit.views.HomeActivity" />
+        </activity>
+        <activity
+            android:name="com.pomodoit.views.SettingsActivity"
+            android:label="@string/title_activity_settings"
             android:parentActivityName="com.pomodoit.views.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -115,6 +115,7 @@ public class PauseActivity extends Activity {
 		dialog.setCancelable(false);
 		// content of the dialog
 		dialog.setContentView(R.layout.activity_new_session);
+		// Button No --> Go home
 		Button btNo = (Button) dialog.findViewById(R.id.btNo);
 		btNo.setOnClickListener(new OnClickListener()
 		{
@@ -126,6 +127,18 @@ public class PauseActivity extends Activity {
 				showHomeView();
 			}
 		});
+		// Button Yes --> 
+		Button btYes = (Button) dialog.findViewById(R.id.btYes);
+		btYes.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				dialog.dismiss();
+				finish();
+				showMainView();
+			}
+		});
 
 		dialog.show();
 	}
@@ -133,6 +146,12 @@ public class PauseActivity extends Activity {
 	private void showHomeView()
 	{
 		Intent intent = new Intent(this, HomeActivity.class);
+		startActivity(intent);
+	}
+	
+	private void showMainView()
+	{
+		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
 	}
 	

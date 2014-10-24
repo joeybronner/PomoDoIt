@@ -27,7 +27,7 @@ import com.pomodoit.util.Toaster;
 
 public class MainActivity extends Activity
 {	
-	/* global vars */
+	// Global Variables
 	private long startTime = 0L;
 	long timeInMilliseconds = 0L;
 	long timeSwapBuff = 0L;
@@ -41,7 +41,7 @@ public class MainActivity extends Activity
 	private TextView tvTimer, tvMessage;
 	private Button bt;
 
-	private Handler customHandler = new Handler();
+	public Handler customHandler = new Handler();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -76,23 +76,23 @@ public class MainActivity extends Activity
 			@Override
 			public void onClick(View view)
 			{
-				if (bt.getText().equals("Commencer!"))
+				if (bt.getText().equals(getResources().getString(R.string.btStart)))
 				{
-					tvMessage.setText("REGLE NR 1\nCONCENTRE-TOI\nSUR UNE TACHE\nA LA FOIS.");
+					tvMessage.setText(getResources().getString(R.string.msg_motive_1));
 					startTime = SystemClock.uptimeMillis();
 					customHandler.postDelayed(updateTimerThread, 0);
-					bt.setText("Arreter");
+					bt.setText(getResources().getString(R.string.btStop));
 				}
-				else if (bt.getText().equals("Arreter"))
+				else if (bt.getText().equals(getResources().getString(R.string.btStop)))
 				{
 					timeSwapBuff += timeInMilliseconds;
 					customHandler.removeCallbacks(updateTimerThread);
-					bt.setText("Fin...");
+					bt.setText(getResources().getString(R.string.btEnd));
 				}
-				else if (bt.getText().equals("Fin..."))
+				else if (bt.getText().equals(getResources().getString(R.string.btEnd)))
 				{
-					tvTimer.setText("25:00:00");
-					bt.setText("Commencer!");
+					tvTimer.setText(getResources().getString(R.string.timerVal));
+					bt.setText(getResources().getString(R.string.btStart));
 				}
 			}
 		});
@@ -152,7 +152,7 @@ public class MainActivity extends Activity
 				try { 
 					if (NameAndNoteActivity.isFieldEmpty(etName.getText().toString())) {
 						Toaster.displayToast(MainActivity.this.getBaseContext(), 
-								"Erreur, veuillez entrer un nom à votre activité.", 
+								getResources().getString(R.string.err_noname), 
 								3000);
 					} else {
 						// Increment Round (number of rounds)

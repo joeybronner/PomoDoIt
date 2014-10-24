@@ -73,7 +73,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 		ContentValues values = new ContentValues();
 		values.put(KEY_NAME, ses.getName()); 
 		values.put(KEY_MARK, ses.getMark());
-		values.put(KEY_DATE, ses.getDate());
+		values.put(KEY_DATE, ses.createDate());
 		
 		// 3. insert
 		db.insert(TABLE_SESSIONS,null,values); 

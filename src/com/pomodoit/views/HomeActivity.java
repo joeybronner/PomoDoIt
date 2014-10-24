@@ -27,15 +27,16 @@ import com.pomodoit.util.Constants;
 public class HomeActivity extends Activity implements OnItemClickListener
 {
 
-	//static final String EXTRA_MAP = "map";
+	// TODO: Get string "new session", etc... from R.strings ressources
 	private String _errormsg;
-	static final LauncherIcon[] ICONS =
+	
+	final static LauncherIcon[] ICONS =
 		{
 		// LauncherIcon (<icon>, <text>, <id>)
-		new LauncherIcon(R.drawable.im_start, "Nouvelle activité", "new_activity"),
-		new LauncherIcon(R.drawable.im_histo, "Historique", "historique"),
-		new LauncherIcon(R.drawable.im_aide, "Aide", "help"),
-		new LauncherIcon(R.drawable.im_preferences, "Préférences", "settings"),
+		new LauncherIcon(R.drawable.im_start, "", "new_activity"),
+		new LauncherIcon(R.drawable.im_histo, "", "historique"),
+		new LauncherIcon(R.drawable.im_aide, "", "help"),
+		new LauncherIcon(R.drawable.im_preferences, "", "settings"),
 		};
 
 	@Override
@@ -47,11 +48,11 @@ public class HomeActivity extends Activity implements OnItemClickListener
 		GridView gridview = (GridView) findViewById(R.id.dashboard_grid);
 		gridview.setAdapter(new ImageAdapter(this));
 		gridview.setOnItemClickListener(this);
-
+		
 		// Action Bar Color
 		ActionBar bar = getActionBar();
 		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed))));
-
+		
 		// Type face 
 		Constants.tf = Typeface.createFromAsset(this.getAssets(),"fonts/OpenSans-Light.ttf");
 
@@ -72,7 +73,7 @@ public class HomeActivity extends Activity implements OnItemClickListener
 	@Override
 	public void onItemClick(AdapterView<?> parent, View v, int position, long id)
 	{
-		// here, redirect to the good view
+		// Here, redirect to the good view
 		String icon_selected = ICONS[position].map;
 		if (icon_selected.equals("new_activity"))
 		{
@@ -86,18 +87,21 @@ public class HomeActivity extends Activity implements OnItemClickListener
 		}
 		else if (icon_selected.equals("help"))
 		{
-
+			Intent intent = new Intent(this, HelpActivity.class);
+			startActivity(intent);
 		}
 		else if (icon_selected.equals("settings"))
 		{
-
+			Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
 		}
 		else
 		{
-			_errormsg = "Erreur lors de l'ouverture d'une vue.";
-			Toast toast = Toast.makeText(this, "Erreur: " + _errormsg, Toast.LENGTH_LONG);
+			_errormsg = getResources().getString(R.string.err_loading_view);
+			Toast toast = Toast.makeText(this,_errormsg, Toast.LENGTH_LONG);
 			toast.show();
 		}
+		
 	}
 
 	static class LauncherIcon
