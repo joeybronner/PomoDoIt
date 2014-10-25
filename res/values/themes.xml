@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-  <style name="PomoDoIt" parent="@style/_PomoDoIt"/>
-  <style name="_PomoDoIt" parent="android:Theme.Holo.Light">
-    <item name="android:editTextBackground">@drawable/edittext_style</item>
-    <item name="android:ratingBarStyle">@style/RatingBarPomoDoIt</item>
-  </style>
+
+    <style name="PomoDoIt" parent="@style/_PomoDoIt" />
+
+    <style name="_PomoDoIt" parent="android:Theme.Holo">
+        <item name="android:editTextBackground">@drawable/edittext_style</item>
+        <item name="android:ratingBarStyle">@style/RatingBarPomoDoIt</item>
+    </style>
+
 </resources>

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -35,9 +36,9 @@ public class MainActivity extends Activity
 	protected ProgressBar mProgressBar;
 	protected static Context cont;
 	MySQLiteHelper db = new MySQLiteHelper(this);
+	Resources res;
 
-
-	/* elements */
+	// Elements
 	private TextView tvTimer, tvMessage;
 	private Button bt;
 
@@ -51,21 +52,24 @@ public class MainActivity extends Activity
 
 		cont = this.getBaseContext();
 
-		/* action bar color */
+		// Action Bar Color
 		ActionBar bar = getActionBar();
 		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed))));
 
-		/* progress bar */
+		// Progress Bar 
 		mProgressBar = (ProgressBar)findViewById(R.id.progressBar);
 
-		/* type face font for timer */
+		// Type Face Font for timer
 		tvTimer = (TextView) findViewById(R.id.timerValue);
 		tvTimer.setTypeface(Constants.tf);
 		tvTimer.setTextSize(80);
 
-		/* type face font for message textview */
+		// Type Face Font for message text view
 		tvMessage = (TextView) findViewById(R.id.tvMessage);
 		tvMessage.setTypeface(Constants.tf);
+		
+		// Resources
+		res = getResources();
 
 		/* type face font for the button */
 		bt = (Button) findViewById(R.id.btMain);
@@ -93,6 +97,8 @@ public class MainActivity extends Activity
 				{
 					tvTimer.setText(getResources().getString(R.string.timerVal));
 					bt.setText(getResources().getString(R.string.btStart));
+					tvMessage.setBackground(res.getDrawable(R.drawable.im_clock));
+					Constants.round = 0;
 				}
 			}
 		});
@@ -104,8 +110,8 @@ public class MainActivity extends Activity
 		@Override
 		public void run()
 		{
-			//timeSwapBuff = 60000*25;
-			timeSwapBuff = 100*25;
+			timeSwapBuff = 60000*25;
+			//timeSwapBuff = 100*25;
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
 
@@ -119,6 +125,33 @@ public class MainActivity extends Activity
 					+ 	":"
 					+ 	String.format("%02d", milliseconds));
 			customHandler.postDelayed(this, 0);
+			
+			// Image Clock
+			if (secs<5) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock55));
+			} else if (secs > 5 && secs <= 10) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock50));
+			} else if (secs > 10 && secs <= 15) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock45));
+			} else if (secs > 15 && secs <= 20) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock40));
+			} else if (secs > 20 && secs <= 25) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock35));
+			} else if (secs > 25 && secs <= 30) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock30));
+			} else if (secs > 30 && secs <= 35) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock25));
+			} else if (secs > 35 && secs <= 40) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock20));
+			} else if (secs > 40 && secs <= 45) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock15));
+			} else if (secs > 45 && secs <= 50) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock10));
+			} else if (secs > 50 && secs <= 55) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock05));
+			} else if (secs > 55) {
+				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock00));
+			}
 
 			/* Progress Bar Update */
 			final int progress = (int) (mProgressBar.getMax() * timeInMilliseconds / timeSwapBuff);

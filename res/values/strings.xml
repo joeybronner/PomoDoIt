@@ -35,17 +35,20 @@
     <string name="title_activity_history">History</string>
     <string name="one_star">\u2605</string>
     <string name="two_star">\u2605\u2605</string>
-	<string name="three_star">\u2605\u2605\u2605</string>
-	<string name="four_star">\u2605\u2605\u2605\u2605</string>
-	<string name="five_star">\u2605\u2605\u2605\u2605\u2605</string>
-	
+    <string name="three_star">\u2605\u2605\u2605</string>
+    <string name="four_star">\u2605\u2605\u2605\u2605</string>
+    <string name="five_star">\u2605\u2605\u2605\u2605\u2605</string>
+
     <!-- PAUSE ACTIVITY -->
     <string name="title_activity_pause">Taking a break from work</string>
     <string name="msgPause">Coffee time, take a break\u0021</string>
     <string name="timerPauseVal">05:00:00</string>
-    
+
     <!-- HELP ACTIVITY -->
     <string name="title_activity_help">Help</string>
+
+    <!-- SETTINGS ACTIVITY -->
+	<string name="msg_planemode">Do you want to enable the plane mode during your working activities ?</string>
 
     <!-- SLIDING IMAGES -->
     <string name="str_im_message">Message</string>
@@ -60,5 +63,7 @@
     <!-- ERROR MESSAGES -->
     <string name="err_loading_view">Error while loading a new view</string>
     <string name="err_noname">Error: Please give a name of your activity"</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
