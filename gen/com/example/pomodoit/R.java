@@ -78,6 +78,7 @@ public final class R {
         public static final int FirstText=0x7f090018;
         public static final int SecondText=0x7f090019;
         public static final int ThirdText=0x7f09001a;
+        public static final int action_delete_history=0x7f09001c;
         public static final int action_settings=0x7f09001b;
         public static final int btMain=0x7f090005;
         public static final int btNo=0x7f09000d;
@@ -127,6 +128,7 @@ public final class R {
         public static final int settings=0x7f080007;
     }
     public static final class string {
+        public static final int action_delete_history=0x7f06001a;
         public static final int action_settings=0x7f060002;
         /**  APP GLOBAL 
          */
@@ -139,23 +141,24 @@ public final class R {
         public static final int btStop=0x7f060008;
         /**  ERROR MESSAGES 
          */
-        public static final int err_loading_view=0x7f060027;
-        public static final int err_noname=0x7f060028;
+        public static final int err_loading_view=0x7f060029;
+        public static final int err_noname=0x7f06002a;
         /**  NAMEANDNOTE ACTIVITY 
          */
         public static final int felicitations=0x7f06000e;
         public static final int five_star=0x7f060019;
         public static final int four_star=0x7f060018;
-        public static final int hello_world=0x7f06002a;
+        public static final int hello_world=0x7f06002c;
         public static final int help=0x7f060005;
         public static final int history=0x7f060004;
-        public static final int msgPause=0x7f06001b;
+        public static final int msgPause=0x7f06001d;
+        public static final int msg_delete_history=0x7f06001b;
         public static final int msg_motive_0=0x7f06000b;
         public static final int msg_motive_1=0x7f06000c;
         public static final int msg_motive_2=0x7f06000d;
         /**  SETTINGS ACTIVITY 
          */
-        public static final int msg_planemode=0x7f06001e;
+        public static final int msg_planemode=0x7f060020;
         /**  HOME ACTIVITY 
          */
         public static final int new_session=0x7f060003;
@@ -164,23 +167,23 @@ public final class R {
         public static final int one_star=0x7f060015;
         public static final int oui=0x7f060012;
         public static final int settings=0x7f060006;
-        public static final int str_im_coffee=0x7f060020;
-        public static final int str_im_facebook=0x7f060021;
-        public static final int str_im_internet=0x7f060025;
-        public static final int str_im_linkedin=0x7f060023;
-        public static final int str_im_mail=0x7f060024;
+        public static final int str_im_coffee=0x7f060022;
+        public static final int str_im_facebook=0x7f060023;
+        public static final int str_im_internet=0x7f060027;
+        public static final int str_im_linkedin=0x7f060025;
+        public static final int str_im_mail=0x7f060026;
         /**  SLIDING IMAGES 
          */
-        public static final int str_im_message=0x7f06001f;
-        public static final int str_im_music=0x7f060022;
-        public static final int str_im_twitter=0x7f060026;
+        public static final int str_im_message=0x7f060021;
+        public static final int str_im_music=0x7f060024;
+        public static final int str_im_twitter=0x7f060028;
         public static final int submit=0x7f06000f;
         public static final int three_star=0x7f060017;
-        public static final int timerPauseVal=0x7f06001c;
+        public static final int timerPauseVal=0x7f06001e;
         public static final int timerVal=0x7f06000a;
         /**  HELP ACTIVITY 
          */
-        public static final int title_activity_help=0x7f06001d;
+        public static final int title_activity_help=0x7f06001f;
         /**  HISTORY ACTIVITY 
          */
         public static final int title_activity_history=0x7f060014;
@@ -189,8 +192,8 @@ public final class R {
         public static final int title_activity_new_session=0x7f060010;
         /**  PAUSE ACTIVITY 
          */
-        public static final int title_activity_pause=0x7f06001a;
-        public static final int title_activity_settings=0x7f060029;
+        public static final int title_activity_pause=0x7f06001c;
+        public static final int title_activity_settings=0x7f06002b;
         public static final int two_star=0x7f060016;
     }
     public static final class style {

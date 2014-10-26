@@ -6,7 +6,9 @@ import java.util.List;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -101,9 +103,33 @@ public class HistoryActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+		if (id == R.id.action_delete_history) {
+			AlertDialog.Builder ab = new AlertDialog.Builder(HistoryActivity.this);
+			ab.setMessage(getResources().getString(R.string.msg_delete_history))
+			.setPositiveButton(getResources().getString(R.string.oui), 
+					dialogDemoListener)
+			.setNegativeButton(getResources().getString(R.string.non), 
+					dialogDemoListener).show();
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	DialogInterface.OnClickListener dialogDemoListener = new DialogInterface.OnClickListener()
+	{
+		@Override
+		public void onClick(DialogInterface dialog, int which)
+		{
+			switch (which)
+			{
+			case DialogInterface.BUTTON_POSITIVE:
+				// Delete History
+				db.deleteAllSessions();
+				break;
+
+			case DialogInterface.BUTTON_NEGATIVE:
+				// Nothing
+				break;
+			}
+		}
+	};
 }

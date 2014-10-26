@@ -40,7 +40,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 				"value TEXT)";
 		/* command to create it. */
 		db.execSQL(CREATE_SESSIONS_USERSETS);
-		
+
 		// Initialize database
 		initializeUserSets(db);
 	}
@@ -101,6 +101,48 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 
 		// 4. close
 		db.close(); 
+	}
+
+	public void deleteAllSessions()
+	{
+		// 1. get reference to writable DB
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		// 2. delete
+		db.delete(TABLE_SESSIONS,
+				KEY_ID + " >= ?",
+				new String[] { "0" });
+
+		// 3. close
+		db.close();
+	}
+
+	public boolean getPlaneMode()
+	{
+		String query = 	"SELECT * FROM " + TABLE_USERSETS + 
+				" WHERE " + KEY_KEY + " = \"plane\"";
+
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cursor = db.rawQuery(query, null);
+
+		if (cursor.moveToFirst())
+		{
+			if (cursor.getString(1).equals("yes")) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		return false;
+	}
+
+	public void updatePlaneMode(String value)
+	{
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put(KEY_KEY, value);
+		db.update(TABLE_USERSETS, values, KEY_VALUE + " = ?", new String[] { value });
 	}
 
 	public List<Session> getAllSessions()

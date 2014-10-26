@@ -21,8 +21,7 @@ public class Toaster {
 		Toast.makeText(c, txt, duration).show();
 	}
 	
-	public static void displayToast(Context c, String txt) 
-			throws Exception {
+	public static void displayToast(Context c, String txt) {
 		// if duration is empty, the message'll be displayed for a shorty time
 		Toast.makeText(c, txt, Toast.LENGTH_SHORT).show();
 	}

@@ -38,6 +38,8 @@
     <string name="three_star">\u2605\u2605\u2605</string>
     <string name="four_star">\u2605\u2605\u2605\u2605</string>
     <string name="five_star">\u2605\u2605\u2605\u2605\u2605</string>
+    <string name="action_delete_history">Delete history</string>
+    <string name="msg_delete_history">Are you sure you want to delete all history?</string>
 
     <!-- PAUSE ACTIVITY -->
     <string name="title_activity_pause">Taking a break from work</string>
