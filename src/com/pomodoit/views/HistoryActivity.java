@@ -15,8 +15,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
-
-import com.example.pomodoit.R;
+import com.pomodoit.joeybr.R;
 import com.pomodoit.adapter.ListViewAdapter;
 import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.db.Session;

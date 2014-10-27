@@ -16,8 +16,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
-
-import com.example.pomodoit.R;
+import com.pomodoit.joeybr.R;
 import com.pomodoit.util.Constants;
 
 public class PauseActivity extends Activity {
@@ -79,7 +78,7 @@ public class PauseActivity extends Activity {
 		public void run()
 		{
 			//timeSwapBuff = 60000*5; // 5 minutes
-			timeSwapBuff = 100*25;
+			timeSwapBuff = 1000*25;
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
 

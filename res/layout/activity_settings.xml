@@ -26,6 +26,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_below="@+id/ivPlane"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/msg_planemode"
         android:textColor="#FFFFFF"

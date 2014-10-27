@@ -5,16 +5,17 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Switch;
-
-import com.example.pomodoit.R;
+import com.pomodoit.joeybr.R;
 import com.pomodoit.db.MySQLiteHelper;
-import com.pomodoit.util.Toaster;
 
 public class SettingsActivity extends Activity {
 	
 	// Global Variables
 	MySQLiteHelper db = new MySQLiteHelper(this);
+	Switch switchPlane;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,22 +26,28 @@ public class SettingsActivity extends Activity {
 		ActionBar bar = getActionBar();
 		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed))));
 		
+		// Switch from view
+		switchPlane = (Switch) SettingsActivity.this.findViewById(R.id.switchPlaneMode);
+		
 		// Get Plane Mode
 		boolean planeMode = db.getPlaneMode();
-		Toaster.displayToast(this, "Plane mode: " + planeMode);
 		
 		// Update Switch Button
 		updatePlaneButton(planeMode);
 		
-		// TODO: Listener on switch change value
-		// if change to true : db.updatePlaneMode("yes")
-		// if change to false: db.updatePlaneMode("yes")
+		// Listener on Switch Button
+		switchPlane.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+		    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		        if (isChecked==true) {
+		        	db.updatePlaneMode("yes");
+		        } else {
+		        	db.updatePlaneMode("no");
+		        }
+		    }
+		});
 	}
 	
 	private void updatePlaneButton(boolean p) {
-		
-		Switch switchPlane = (Switch) SettingsActivity.this.findViewById(R.id.switchPlaneMode);
-		
 		if (p == true) {
 			switchPlane.setChecked(true);
 		} else {

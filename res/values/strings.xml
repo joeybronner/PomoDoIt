@@ -50,7 +50,8 @@
     <string name="title_activity_help">Help</string>
 
     <!-- SETTINGS ACTIVITY -->
-	<string name="msg_planemode">Do you want to enable the plane mode during your working activities ?</string>
+    <string name="title_activity_settings">Settings</string>
+	<string name="msg_planemode">Do you want to activate the plane mode during your working activities ?</string>
 
     <!-- SLIDING IMAGES -->
     <string name="str_im_message">Message</string>
@@ -64,8 +65,10 @@
 
     <!-- ERROR MESSAGES -->
     <string name="err_loading_view">Error while loading a new view</string>
-    <string name="err_noname">Error: Please give a name of your activity"</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="err_noname">Error: Please give a name of your activity</string>
+    <string name="err_activate_planemode">Error: Unable to activate plane mode</string>
+    
+ 
+    
 
 </resources>

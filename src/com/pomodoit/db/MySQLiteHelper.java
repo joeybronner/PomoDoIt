@@ -78,11 +78,13 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 	/* ### METHODS ### */
 
 	public void initializeUserSets(SQLiteDatabase db) {
-
 		// 1. create ContentValues to add key "column"/value
 		ContentValues values = new ContentValues();
 		values.put(KEY_KEY, "plane"); 
 		values.put(KEY_VALUE, "no");
+		
+		// 3. insert
+		db.insert(TABLE_USERSETS,null,values); 
 	}
 
 	public void addSession(Session ses)
@@ -119,30 +121,56 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 
 	public boolean getPlaneMode()
 	{
-		String query = 	"SELECT * FROM " + TABLE_USERSETS + 
-				" WHERE " + KEY_KEY + " = \"plane\"";
+		String query = 	"SELECT * FROM " + TABLE_USERSETS;
 
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(query, null);
-
+		
 		if (cursor.moveToFirst())
 		{
-			if (cursor.getString(1).equals("yes")) {
+			if (cursor.getString(0).equals("plane") && 
+					cursor.getString(1).equals("yes")) {
 				return true;
 			}
-			else {
+			else if (cursor.getString(0).equals("plane") && 
+					cursor.getString(1).equals("no")) {
 				return false;
 			}
 		}
-		return false;
+		return true;
+	}
+	
+	public List<String> getTableUserSetsValues() {
+		
+		List<String> s = new LinkedList<String>();
+		
+		String query = 	"SELECT * FROM " + TABLE_USERSETS;
+		
+		// 2. get reference to writable DB
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cursor = db.rawQuery(query, null);
+
+		// 3. go over each row, build session and add it to list
+		if (cursor.moveToFirst())
+		{
+			do {
+
+				s.add(cursor.getString(0) + cursor.getString(1));
+
+			} while (cursor.moveToNext());
+		}
+
+		// return all sessions
+		return s;
+		
 	}
 
 	public void updatePlaneMode(String value)
 	{
-		SQLiteDatabase db = this.getWritableDatabase();
-		ContentValues values = new ContentValues();
-		values.put(KEY_KEY, value);
-		db.update(TABLE_USERSETS, values, KEY_VALUE + " = ?", new String[] { value });
+    	SQLiteDatabase db = this.getWritableDatabase();
+    	ContentValues values = new ContentValues();
+    	values.put(KEY_VALUE, value);
+    	db.update(TABLE_USERSETS, values, KEY_KEY + " = ?", new String[] { "plane" });
 	}
 
 	public List<Session> getAllSessions()

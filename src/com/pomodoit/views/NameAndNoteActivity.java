@@ -3,8 +3,7 @@ package com.pomodoit.views;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
-
-import com.example.pomodoit.R;
+import com.pomodoit.joeybr.R;
 
 public class NameAndNoteActivity extends Activity
 {	

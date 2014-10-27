@@ -2,7 +2,7 @@ package com.pomodoit.adapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import com.example.pomodoit.R;
+import com.pomodoit.joeybr.R;
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;

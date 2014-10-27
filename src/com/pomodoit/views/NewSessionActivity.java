@@ -1,6 +1,6 @@
 package com.pomodoit.views;
 
-import com.example.pomodoit.R;
+import com.pomodoit.joeybr.R;
 import android.app.Activity;
 import android.os.Bundle;
 

@@ -20,8 +20,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.pomodoit.R;
+import com.pomodoit.joeybr.R;
 import com.pomodoit.util.Constants;
 
 public class HomeActivity extends Activity implements OnItemClickListener

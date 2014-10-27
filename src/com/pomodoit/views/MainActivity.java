@@ -11,6 +11,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -19,8 +21,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
-import com.example.pomodoit.R;
+import com.pomodoit.joeybr.R;
 import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.db.Session;
 import com.pomodoit.util.Constants;
@@ -80,19 +81,26 @@ public class MainActivity extends Activity
 			@Override
 			public void onClick(View view)
 			{
+				// Start Session
 				if (bt.getText().equals(getResources().getString(R.string.btStart)))
 				{
 					tvMessage.setText(getResources().getString(R.string.msg_motive_1));
 					startTime = SystemClock.uptimeMillis();
 					customHandler.postDelayed(updateTimerThread, 0);
 					bt.setText(getResources().getString(R.string.btStop));
+					
+					if (db.getPlaneMode()==true) {
+						activatePlaneMode();
+					}
 				}
+				// Stop Session
 				else if (bt.getText().equals(getResources().getString(R.string.btStop)))
 				{
 					timeSwapBuff += timeInMilliseconds;
 					customHandler.removeCallbacks(updateTimerThread);
 					bt.setText(getResources().getString(R.string.btEnd));
 				}
+				// End Session
 				else if (bt.getText().equals(getResources().getString(R.string.btEnd)))
 				{
 					tvTimer.setText(getResources().getString(R.string.timerVal));
@@ -110,8 +118,8 @@ public class MainActivity extends Activity
 		@Override
 		public void run()
 		{
-			timeSwapBuff = 60000*25;
-			//timeSwapBuff = 100*25;
+			//timeSwapBuff = 60000*25;
+			timeSwapBuff = 1000*25;
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
 
@@ -217,6 +225,21 @@ public class MainActivity extends Activity
 		else
 		{
 			return false;
+		}
+	}
+	
+	@SuppressWarnings("deprecation")
+	private void activatePlaneMode() {
+		try {	
+			Settings.System.putInt(getContentResolver(),Settings.System.AIRPLANE_MODE_ON, 1);
+    		Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+            intent.putExtra("state", true);
+            sendBroadcast(intent);
+		
+		} catch (Exception err) {
+			Toaster.displayToast(MainActivity.this.getBaseContext(),
+					getResources().getString(R.string.err_activate_planemode));
+			Log.w("PomoDoIt Trace", "Error: " + err);
 		}
 	}
 
