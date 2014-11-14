@@ -51,6 +51,8 @@
 
     <!-- HELP ACTIVITY -->
     <string name="title_activity_help">Help</string>
+    <string name="imPomodoro_description">Pomodoro description</string>
+    <string name="pomodoro_desc">What\u0027s Pomodoro?</string>
 
     <!-- SETTINGS ACTIVITY -->
     <string name="title_activity_settings">Settings</string>

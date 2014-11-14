@@ -9,4 +9,23 @@
     android:background="@color/fontRed"
     tools:context="com.pomodoit.views.HelpActivity" >
 
+    <ImageView
+        android:id="@+id/ivPomodoro"
+        android:contentDescription="@string/imPomodoro_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/im_pomodoro" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivPomodoro"
+        android:layout_centerHorizontal="true"
+        android:text="@string/pomodoro_desc"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
 </RelativeLayout>
