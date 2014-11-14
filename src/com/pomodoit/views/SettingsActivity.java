@@ -8,9 +8,9 @@ import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Switch;
-import com.pomodoit.joeybr.R;
-import com.pomodoit.util.Toaster;
+
 import com.pomodoit.db.MySQLiteHelper;
+import com.pomodoit.joeybr.R;
 
 public class SettingsActivity extends Activity {
 	
@@ -38,8 +38,6 @@ public class SettingsActivity extends Activity {
 		// Update Switch Button
 		updateSoundButton(soundMode);
 		updateScreenButton(screenMode);
-		
-		//int siz = db.getSizeUserSets();
 		
 		// Listener on Switch Button
 		switchSound.setOnCheckedChangeListener(new OnCheckedChangeListener() {

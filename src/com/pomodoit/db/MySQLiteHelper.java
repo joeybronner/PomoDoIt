@@ -3,9 +3,6 @@ package com.pomodoit.db;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.pomodoit.util.Toaster;
-import com.pomodoit.views.SettingsActivity;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -89,7 +86,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 		// 1. create ContentValues to add key "column"/value
 		ContentValues values = new ContentValues();
 		values.put(KEY_KEY, "sound"); 
-		values.put(KEY_VALUE, "no");
+		values.put(KEY_VALUE, "yes");
 
 		// 3. insert
 		db.insert(TABLE_USERSETS,null,values); 
@@ -97,6 +94,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 
 	public int getSizeUserSets() {
 		return getSizeTable(TABLE_USERSETS);
+	}
+	
+	public int getSizeSessions() {
+		return getSizeTable(TABLE_SESSIONS);
 	}
 
 	public void addScreenMode(SQLiteDatabase db) {
@@ -106,7 +107,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 		// 1. create ContentValues to add key "column"/value
 		ContentValues values = new ContentValues();
 		values.put(KEY_KEY, "screen"); 
-		values.put(KEY_VALUE, "no");
+		values.put(KEY_VALUE, "yes");
 
 		// 3. insert
 		db.insert(TABLE_USERSETS,null,values); 

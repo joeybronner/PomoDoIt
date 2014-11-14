@@ -11,19 +11,19 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import com.pomodoit.joeybr.R;
+
 import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.db.Session;
+import com.pomodoit.joeybr.R;
 import com.pomodoit.util.Constants;
 import com.pomodoit.util.Toaster;
 
@@ -71,6 +71,11 @@ public class MainActivity extends Activity
 		
 		// Resources
 		res = getResources();
+		
+		// Stay screen on if parameter is true
+		if (db.getScreenMode()==true) {
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		}
 
 		/* type face font for the button */
 		bt = (Button) findViewById(R.id.btMain);
@@ -228,7 +233,6 @@ public class MainActivity extends Activity
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
 	private void activateSoundMode() {
 		try {	
 			Toaster.displayToast(MainActivity.this.getBaseContext(),

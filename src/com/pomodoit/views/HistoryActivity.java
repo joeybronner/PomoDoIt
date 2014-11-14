@@ -14,7 +14,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+
 import com.pomodoit.joeybr.R;
 import com.pomodoit.adapter.ListViewAdapter;
 import com.pomodoit.db.MySQLiteHelper;
@@ -37,9 +41,20 @@ public class HistoryActivity extends Activity {
 		ActionBar bar = getActionBar();
 		ColorDrawable red = new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed)));
 		bar.setBackgroundDrawable(red);
+		
+		// Refresh number of activities
+		final TextView tvCount = (TextView) findViewById(R.id.tvCount);
+		tvCount.setText(String.valueOf(db.getSizeSessions()));
+		
+		ListView lview = (ListView) findViewById(R.id.listview);
+		ImageView ivEmoticon = (ImageView) findViewById(R.id.ivEmoticon);
+		if (db.getSizeSessions()==0) {
+			// Hide Lsit View and show smiley :(
+			lview.setVisibility(View.INVISIBLE);
+			ivEmoticon.setVisibility(View.VISIBLE);
+		}
 
 		// ListView of items
-		ListView lview = (ListView) findViewById(R.id.listview);
 		try {
 			populateList();
 		} catch (Exception e) {
@@ -123,6 +138,7 @@ public class HistoryActivity extends Activity {
 			case DialogInterface.BUTTON_POSITIVE:
 				// Delete History
 				db.deleteAllSessions();
+				onResume();
 				break;
 
 			case DialogInterface.BUTTON_NEGATIVE:
@@ -131,4 +147,10 @@ public class HistoryActivity extends Activity {
 			}
 		}
 	};
+	
+	@Override
+	protected void onResume() {
+	   super.onResume();
+	   this.onCreate(null);
+	}
 }

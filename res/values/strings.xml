@@ -33,6 +33,9 @@
 
     <!-- HISTORY ACTIVITY -->
     <string name="title_activity_history">History</string>
+    <string name="irealized">I realized</string>
+    <string name="defaultvalue">-</string>
+    <string name="activities">activitie(s).</string>
     <string name="one_star">\u2605</string>
     <string name="two_star">\u2605\u2605</string>
     <string name="three_star">\u2605\u2605\u2605</string>
