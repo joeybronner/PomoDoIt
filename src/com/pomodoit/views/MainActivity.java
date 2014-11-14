@@ -88,10 +88,6 @@ public class MainActivity extends Activity
 					startTime = SystemClock.uptimeMillis();
 					customHandler.postDelayed(updateTimerThread, 0);
 					bt.setText(getResources().getString(R.string.btStop));
-					
-					if (db.getPlaneMode()==true) {
-						activatePlaneMode();
-					}
 				}
 				// Stop Session
 				else if (bt.getText().equals(getResources().getString(R.string.btStop)))
@@ -168,6 +164,10 @@ public class MainActivity extends Activity
 			if (isFinishedTimer(mins, secs, milliseconds))
 			{
 				customHandler.removeCallbacks(this);
+				// Play sound if activated
+				if (db.getSoundMode()==true) {
+					activateSoundMode();
+				}
 				showNameAndNote();
 			}
 		}
@@ -229,17 +229,14 @@ public class MainActivity extends Activity
 	}
 	
 	@SuppressWarnings("deprecation")
-	private void activatePlaneMode() {
+	private void activateSoundMode() {
 		try {	
-			Settings.System.putInt(getContentResolver(),Settings.System.AIRPLANE_MODE_ON, 1);
-    		Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-            intent.putExtra("state", true);
-            sendBroadcast(intent);
+			Toaster.displayToast(MainActivity.this.getBaseContext(),
+					"Maintenant, je joue un son.");
 		
 		} catch (Exception err) {
 			Toaster.displayToast(MainActivity.this.getBaseContext(),
 					getResources().getString(R.string.err_activate_planemode));
-			Log.w("PomoDoIt Trace", "Error: " + err);
 		}
 	}
 

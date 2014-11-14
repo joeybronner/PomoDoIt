@@ -3,9 +3,13 @@ package com.pomodoit.db;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.pomodoit.util.Toaster;
+import com.pomodoit.views.SettingsActivity;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -42,7 +46,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 		db.execSQL(CREATE_SESSIONS_USERSETS);
 
 		// Initialize database
-		initializeUserSets(db);
+		addSoundMode(db);
+		addScreenMode(db);
 	}
 
 	@Override
@@ -77,12 +82,32 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 
 	/* ### METHODS ### */
 
-	public void initializeUserSets(SQLiteDatabase db) {
+	public void addSoundMode(SQLiteDatabase db) {
+
+		//SQLiteDatabase db = this.getWritableDatabase();
+
 		// 1. create ContentValues to add key "column"/value
 		ContentValues values = new ContentValues();
-		values.put(KEY_KEY, "plane"); 
+		values.put(KEY_KEY, "sound"); 
 		values.put(KEY_VALUE, "no");
-		
+
+		// 3. insert
+		db.insert(TABLE_USERSETS,null,values); 
+	}
+
+	public int getSizeUserSets() {
+		return getSizeTable(TABLE_USERSETS);
+	}
+
+	public void addScreenMode(SQLiteDatabase db) {
+
+		//SQLiteDatabase db = this.getWritableDatabase();
+
+		// 1. create ContentValues to add key "column"/value
+		ContentValues values = new ContentValues();
+		values.put(KEY_KEY, "screen"); 
+		values.put(KEY_VALUE, "no");
+
 		// 3. insert
 		db.insert(TABLE_USERSETS,null,values); 
 	}
@@ -100,9 +125,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 
 		// 3. insert
 		db.insert(TABLE_SESSIONS,null,values); 
-
-		// 4. close
-		db.close(); 
 	}
 
 	public void deleteAllSessions()
@@ -114,38 +136,60 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 		db.delete(TABLE_SESSIONS,
 				KEY_ID + " >= ?",
 				new String[] { "0" });
-
-		// 3. close
-		db.close();
 	}
 
-	public boolean getPlaneMode()
+	public boolean getSoundMode()
 	{
 		String query = 	"SELECT * FROM " + TABLE_USERSETS;
 
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(query, null);
-		
+
 		if (cursor.moveToFirst())
 		{
-			if (cursor.getString(0).equals("plane") && 
-					cursor.getString(1).equals("yes")) {
-				return true;
-			}
-			else if (cursor.getString(0).equals("plane") && 
-					cursor.getString(1).equals("no")) {
-				return false;
-			}
+			do {
+				if (cursor.getString(0).equals("sound") && 
+						cursor.getString(1).equals("yes")) {
+					return true;
+				}
+				else if (cursor.getString(0).equals("sound") && 
+						cursor.getString(1).equals("no")) {
+					return false;
+				}
+			}while (cursor.moveToNext());
 		}
 		return true;
 	}
-	
-	public List<String> getTableUserSetsValues() {
-		
-		List<String> s = new LinkedList<String>();
-		
+
+	public boolean getScreenMode()
+	{
 		String query = 	"SELECT * FROM " + TABLE_USERSETS;
-		
+
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cursor = db.rawQuery(query, null);
+
+		if (cursor.moveToFirst())
+		{
+			do {
+				if (cursor.getString(0).equals("screen") && 
+						cursor.getString(1).equals("yes")) {
+					return true;
+				}
+				else if (cursor.getString(0).equals("screen") && 
+						cursor.getString(1).equals("no")) {
+					return false;
+				}
+			}while (cursor.moveToNext());
+		}
+		return true;
+	}
+
+	public List<String> getTableUserSetsValues() {
+
+		List<String> s = new LinkedList<String>();
+
+		String query = 	"SELECT * FROM " + TABLE_USERSETS;
+
 		// 2. get reference to writable DB
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(query, null);
@@ -160,17 +204,32 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 			} while (cursor.moveToNext());
 		}
 
+		db.close();
+
 		// return all sessions
 		return s;
-		
+
 	}
 
-	public void updatePlaneMode(String value)
+	public void updateSoundMode(String value)
 	{
-    	SQLiteDatabase db = this.getWritableDatabase();
-    	ContentValues values = new ContentValues();
-    	values.put(KEY_VALUE, value);
-    	db.update(TABLE_USERSETS, values, KEY_KEY + " = ?", new String[] { "plane" });
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put(KEY_VALUE, value);
+		db.update(TABLE_USERSETS, values, KEY_KEY + " = ?", new String[] { "sound" });
+	}
+
+	public void updateScreenMode(String value)
+	{
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put(KEY_VALUE, value);
+		db.update(TABLE_USERSETS, values, KEY_KEY + " = ?", new String[] { "screen" });
+	}
+
+	public int getSizeTable(String tableName) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		return (int) DatabaseUtils.queryNumEntries(db, tableName);
 	}
 
 	public List<Session> getAllSessions()

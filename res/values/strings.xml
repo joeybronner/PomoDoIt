@@ -51,8 +51,9 @@
 
     <!-- SETTINGS ACTIVITY -->
     <string name="title_activity_settings">Settings</string>
-	<string name="msg_planemode">Do you want to activate the plane mode during your working activities ?</string>
-
+	<string name="msg_soundmode">Play sound?</string>
+	<string name="msg_screenmode">Keep screen ON?</string>
+	
     <!-- SLIDING IMAGES -->
     <string name="str_im_message">Message</string>
     <string name="str_im_coffee">Coffee</string>

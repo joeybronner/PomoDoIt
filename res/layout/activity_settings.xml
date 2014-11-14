@@ -11,24 +11,37 @@
     tools:context="com.pomodoit.views.SettingsActivity" >
 
     <ImageView
-        android:id="@+id/ivPlane"
+        android:id="@+id/ivSoundScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/im_plane"
+        android:src="@drawable/im_playsound"
         android:alpha=".75" />
 
     <Switch
-        android:id="@+id/switchPlaneMode"
-        android:layout_width="wrap_content"
+        android:id="@+id/switchSoundMode"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_below="@+id/ivPlane"
+        android:layout_below="@+id/ivSoundScreen"
         android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:text="@string/msg_planemode"
+        android:gravity="left"
+        android:text="@string/msg_soundmode"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+    
+    <Switch
+        android:id="@+id/switchScreenMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/switchSoundMode"
+        android:layout_marginTop="40dp"
+        android:gravity="left"
+        android:text="@string/msg_screenmode"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 

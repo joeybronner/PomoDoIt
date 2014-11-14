@@ -9,13 +9,14 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Switch;
 import com.pomodoit.joeybr.R;
+import com.pomodoit.util.Toaster;
 import com.pomodoit.db.MySQLiteHelper;
 
 public class SettingsActivity extends Activity {
 	
 	// Global Variables
 	MySQLiteHelper db = new MySQLiteHelper(this);
-	Switch switchPlane;
+	Switch switchSound, switchScreen;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,31 +28,55 @@ public class SettingsActivity extends Activity {
 		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed))));
 		
 		// Switch from view
-		switchPlane = (Switch) SettingsActivity.this.findViewById(R.id.switchPlaneMode);
+		switchSound = (Switch) SettingsActivity.this.findViewById(R.id.switchSoundMode);
+		switchScreen = (Switch) SettingsActivity.this.findViewById(R.id.switchScreenMode);
 		
 		// Get Plane Mode
-		boolean planeMode = db.getPlaneMode();
+		boolean soundMode = db.getSoundMode();
+		boolean screenMode = db.getScreenMode();
 		
 		// Update Switch Button
-		updatePlaneButton(planeMode);
+		updateSoundButton(soundMode);
+		updateScreenButton(screenMode);
+		
+		//int siz = db.getSizeUserSets();
 		
 		// Listener on Switch Button
-		switchPlane.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-		    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		switchSound.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+		    @Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 		        if (isChecked==true) {
-		        	db.updatePlaneMode("yes");
+		        	db.updateSoundMode("yes");
 		        } else {
-		        	db.updatePlaneMode("no");
+		        	db.updateSoundMode("no");
+		        }
+		    }
+		});
+		switchScreen.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+		    @Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		        if (isChecked==true) {
+		        	db.updateScreenMode("yes");
+		        } else {
+		        	db.updateScreenMode("no");
 		        }
 		    }
 		});
 	}
 	
-	private void updatePlaneButton(boolean p) {
+	private void updateSoundButton(boolean p) {
 		if (p == true) {
-			switchPlane.setChecked(true);
+			switchSound.setChecked(true);
 		} else {
-			switchPlane.setChecked(false);
+			switchSound.setChecked(false);
+		}
+	}
+	
+	private void updateScreenButton(boolean p) {
+		if (p == true) {
+			switchScreen.setChecked(true);
+		} else {
+			switchScreen.setChecked(false);
 		}
 	}
 }
