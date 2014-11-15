@@ -20,22 +20,22 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.pomodoit.joeybr.R;
+import com.pomodoit.util.Config;
 import com.pomodoit.util.Constants;
 
 public class HomeActivity extends Activity implements OnItemClickListener
 {
-
-	// TODO: Get string "new session", etc... from R.strings ressources
 	private String _errormsg;
 	
 	final static LauncherIcon[] ICONS =
 		{
 		// LauncherIcon (<icon>, <text>, <id>)
-		new LauncherIcon(R.drawable.im_start, "", "new_activity"),
-		new LauncherIcon(R.drawable.im_histo, "", "historique"),
-		new LauncherIcon(R.drawable.im_aide, "", "help"),
-		new LauncherIcon(R.drawable.im_preferences, "", "settings"),
+		new LauncherIcon(R.drawable.im_start, Config.new_session, "new_activity"),
+		new LauncherIcon(R.drawable.im_histo, Config.history, "historique"),
+		new LauncherIcon(R.drawable.im_aide, Config.help, "help"),
+		new LauncherIcon(R.drawable.im_preferences, Config.settings, "settings"),
 		};
 
 	@Override
@@ -47,6 +47,7 @@ public class HomeActivity extends Activity implements OnItemClickListener
 		GridView gridview = (GridView) findViewById(R.id.dashboard_grid);
 		gridview.setAdapter(new ImageAdapter(this));
 		gridview.setOnItemClickListener(this);
+		
 		
 		// Action Bar Color
 		ActionBar bar = getActionBar();

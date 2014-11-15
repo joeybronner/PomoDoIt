@@ -3,7 +3,9 @@ package com.pomodoit.adapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import com.pomodoit.joeybr.R;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +15,6 @@ import android.widget.TextView;
 @SuppressWarnings("rawtypes")
 public class ListViewAdapter extends BaseAdapter
 {
-
 	public ArrayList<HashMap> list;
 	Activity activity;
 
@@ -44,7 +45,7 @@ public class ListViewAdapter extends BaseAdapter
 		TextView txtThird;
 	}
 
-	@Override
+	@SuppressLint("ResourceAsColor") @Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder;
 		LayoutInflater inflater =  activity.getLayoutInflater();
@@ -56,6 +57,14 @@ public class ListViewAdapter extends BaseAdapter
 			holder.txtFirst = (TextView) convertView.findViewById(R.id.FirstText);
 			holder.txtSecond = (TextView) convertView.findViewById(R.id.SecondText);
 			holder.txtThird = (TextView) convertView.findViewById(R.id.ThirdText);
+
+			// Alternate color line of ListView
+			if(position%2==0) {
+				holder.txtFirst.setBackgroundColor(R.color.fontDarkRed);
+				holder.txtSecond.setBackgroundColor(R.color.fontDarkRed);
+				holder.txtThird.setBackgroundColor(R.color.fontDarkRed);
+			}
+
 			convertView.setTag(holder);
 		}
 		else

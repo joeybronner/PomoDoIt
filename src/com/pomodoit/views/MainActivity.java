@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -39,6 +40,8 @@ public class MainActivity extends Activity
 	protected static Context cont;
 	MySQLiteHelper db = new MySQLiteHelper(this);
 	Resources res;
+	
+	MediaPlayer mp;
 
 	// Elements
 	private TextView tvTimer, tvMessage;
@@ -172,7 +175,7 @@ public class MainActivity extends Activity
 				customHandler.removeCallbacks(this);
 				// Play sound if activated
 				if (db.getSoundMode()==true) {
-					activateSoundMode();
+					playSound();
 				}
 				showNameAndNote();
 			}
@@ -210,8 +213,8 @@ public class MainActivity extends Activity
 						float mark = stars.getRating();
 						db.addSession(new Session(name, mark));
 						dialog.dismiss();
+						showPauseView();
 						finish();
-						showPauseView();		
 					}
 				} catch (Exception ex) {
 					// Nothing.
@@ -222,8 +225,10 @@ public class MainActivity extends Activity
 		dialog.show();
 	}
 	
-	private void activateSoundMode() {
+	private void playSound() {
 		try {	
+			mp = MediaPlayer.create(this, R.raw.sound);
+			mp.start();
 			Toaster.displayToast(MainActivity.this.getBaseContext(),
 					"Maintenant, je joue un son.");
 		
