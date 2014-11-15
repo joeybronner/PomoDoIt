@@ -26,6 +26,7 @@ import com.pomodoit.db.Session;
 import com.pomodoit.joeybr.R;
 import com.pomodoit.util.Constants;
 import com.pomodoit.util.Toaster;
+import com.pomodoit.util.Utilities;
 
 public class MainActivity extends Activity
 {	
@@ -166,7 +167,7 @@ public class MainActivity extends Activity
 			final int progress = (int) (mProgressBar.getMax() * timeInMilliseconds / timeSwapBuff);
 			mProgressBar.setProgress(progress);
 
-			if (isFinishedTimer(mins, secs, milliseconds))
+			if (Utilities.isFinishedTimer(mins, secs, milliseconds))
 			{
 				customHandler.removeCallbacks(this);
 				// Play sound if activated
@@ -219,18 +220,6 @@ public class MainActivity extends Activity
 		});
 
 		dialog.show();
-	}
-
-	private boolean isFinishedTimer(int _m, int _s, int _ms)
-	{
-		if(_m == 0 && _s == 0 && _ms == 0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
 	}
 	
 	private void activateSoundMode() {

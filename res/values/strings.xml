@@ -49,11 +49,13 @@
     <string name="msgPause">Coffee time, take a break\u0021</string>
     <string name="timerPauseVal">05:00:00</string>
 
-    <!-- HELP ACTIVITY -->
-    <string name="title_activity_help">Help</string>
+    <!-- ABOUT ACTIVITY -->
+    <string name="title_activity_help">About</string>
     <string name="imPomodoro_description">Pomodoro description</string>
     <string name="pomodoro_desc">What\u0027s Pomodoro?</string>
-
+    <string name="video_link">https://www.youtube.com/watch?v=CT70iCaG0Gs</string>
+	<string name="video_description">The Pomodoro Technique</string>
+	
     <!-- SETTINGS ACTIVITY -->
     <string name="title_activity_settings">Settings</string>
 	<string name="msg_soundmode">Play sound?</string>

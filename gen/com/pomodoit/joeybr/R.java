@@ -59,62 +59,64 @@ public final class R {
         public static final int im_preferences=0x7f02001c;
         public static final int im_start=0x7f02001d;
         public static final int im_twitter=0x7f02001e;
-        public static final int pomodoit_btn_rating_star_off_focused_holo_light=0x7f02001f;
-        public static final int pomodoit_btn_rating_star_off_normal_holo_light=0x7f020020;
-        public static final int pomodoit_btn_rating_star_off_pressed_holo_light=0x7f020021;
-        public static final int pomodoit_btn_rating_star_on_focused_holo_light=0x7f020022;
-        public static final int pomodoit_btn_rating_star_on_normal_holo_light=0x7f020023;
-        public static final int pomodoit_btn_rating_star_on_pressed_holo_light=0x7f020024;
-        public static final int pomodoit_textfield_activated_holo_light=0x7f020025;
-        public static final int pomodoit_textfield_default_holo_light=0x7f020026;
-        public static final int pomodoit_textfield_disabled_focused_holo_light=0x7f020027;
-        public static final int pomodoit_textfield_disabled_holo_light=0x7f020028;
-        public static final int pomodoit_textfield_focused_holo_light=0x7f020029;
-        public static final int progressbar_color=0x7f02002a;
-        public static final int progressbar_color_pause=0x7f02002b;
-        public static final int ratingbar_empty_style=0x7f02002c;
-        public static final int ratingbar_filled_style=0x7f02002d;
-        public static final int ratingbar_style=0x7f02002e;
-        public static final int task_ok=0x7f02002f;
-        public static final int tomato2=0x7f020030;
+        public static final int im_youtube_pomodoro=0x7f02001f;
+        public static final int pomodoit_btn_rating_star_off_focused_holo_light=0x7f020020;
+        public static final int pomodoit_btn_rating_star_off_normal_holo_light=0x7f020021;
+        public static final int pomodoit_btn_rating_star_off_pressed_holo_light=0x7f020022;
+        public static final int pomodoit_btn_rating_star_on_focused_holo_light=0x7f020023;
+        public static final int pomodoit_btn_rating_star_on_normal_holo_light=0x7f020024;
+        public static final int pomodoit_btn_rating_star_on_pressed_holo_light=0x7f020025;
+        public static final int pomodoit_textfield_activated_holo_light=0x7f020026;
+        public static final int pomodoit_textfield_default_holo_light=0x7f020027;
+        public static final int pomodoit_textfield_disabled_focused_holo_light=0x7f020028;
+        public static final int pomodoit_textfield_disabled_holo_light=0x7f020029;
+        public static final int pomodoit_textfield_focused_holo_light=0x7f02002a;
+        public static final int progressbar_color=0x7f02002b;
+        public static final int progressbar_color_pause=0x7f02002c;
+        public static final int ratingbar_empty_style=0x7f02002d;
+        public static final int ratingbar_filled_style=0x7f02002e;
+        public static final int ratingbar_style=0x7f02002f;
+        public static final int task_ok=0x7f020030;
+        public static final int tomato2=0x7f020031;
     }
     public static final class id {
-        public static final int FirstText=0x7f09001f;
-        public static final int SecondText=0x7f090020;
-        public static final int ThirdText=0x7f090021;
-        public static final int action_delete_history=0x7f090023;
-        public static final int action_settings=0x7f090022;
-        public static final int btMain=0x7f09000b;
-        public static final int btNo=0x7f090013;
-        public static final int btSubmit=0x7f090010;
-        public static final int btYes=0x7f090014;
-        public static final int dashboard_grid=0x7f090007;
-        public static final int dashboard_icon_img=0x7f09001c;
-        public static final int dashboard_icon_text=0x7f09001d;
-        public static final int etName=0x7f09000e;
-        public static final int flipper=0x7f090018;
-        public static final int ivEmoticon=0x7f090006;
+        public static final int FirstText=0x7f090020;
+        public static final int SecondText=0x7f090021;
+        public static final int ThirdText=0x7f090022;
+        public static final int action_delete_history=0x7f090024;
+        public static final int action_settings=0x7f090023;
+        public static final int btMain=0x7f09000c;
+        public static final int btNo=0x7f090014;
+        public static final int btSubmit=0x7f090011;
+        public static final int btYes=0x7f090015;
+        public static final int dashboard_grid=0x7f090008;
+        public static final int dashboard_icon_img=0x7f09001d;
+        public static final int dashboard_icon_text=0x7f09001e;
+        public static final int etName=0x7f09000f;
+        public static final int flipper=0x7f090019;
+        public static final int ivEmoticon=0x7f090007;
         public static final int ivPomodoro=0x7f090000;
-        public static final int ivSoundScreen=0x7f090019;
-        public static final int ivTaskOk=0x7f090011;
-        public static final int listview=0x7f090005;
-        public static final int mainActivity=0x7f090008;
-        public static final int progressBar=0x7f090009;
-        public static final int progressBarPause=0x7f090015;
-        public static final int ratingSession=0x7f09000f;
-        public static final int relativeLayout1=0x7f09001e;
-        public static final int switchScreenMode=0x7f09001b;
-        public static final int switchSoundMode=0x7f09001a;
-        public static final int timerPauseValue=0x7f090016;
-        public static final int timerValue=0x7f09000a;
-        public static final int tvCount=0x7f090003;
+        public static final int ivSoundScreen=0x7f09001a;
+        public static final int ivTaskOk=0x7f090012;
+        public static final int ivYoutubePomodoro=0x7f090002;
+        public static final int listview=0x7f090006;
+        public static final int mainActivity=0x7f090009;
+        public static final int progressBar=0x7f09000a;
+        public static final int progressBarPause=0x7f090016;
+        public static final int ratingSession=0x7f090010;
+        public static final int relativeLayout1=0x7f09001f;
+        public static final int switchScreenMode=0x7f09001c;
+        public static final int switchSoundMode=0x7f09001b;
+        public static final int timerPauseValue=0x7f090017;
+        public static final int timerValue=0x7f09000b;
+        public static final int tvCount=0x7f090004;
         public static final int tvDescription=0x7f090001;
-        public static final int tvEnd=0x7f090004;
-        public static final int tvFelicitations=0x7f09000d;
-        public static final int tvIntro=0x7f090002;
-        public static final int tvMessage=0x7f09000c;
-        public static final int tvNewSession=0x7f090012;
-        public static final int tvPauseTitle=0x7f090017;
+        public static final int tvEnd=0x7f090005;
+        public static final int tvFelicitations=0x7f09000e;
+        public static final int tvIntro=0x7f090003;
+        public static final int tvMessage=0x7f09000d;
+        public static final int tvNewSession=0x7f090013;
+        public static final int tvPauseTitle=0x7f090018;
     }
     public static final class layout {
         public static final int activity_help=0x7f030000;
@@ -152,11 +154,11 @@ public final class R {
         public static final int btStart=0x7f060007;
         public static final int btStop=0x7f060008;
         public static final int defaultvalue=0x7f060016;
-        public static final int err_activate_planemode=0x7f060032;
+        public static final int err_activate_planemode=0x7f060034;
         /**  ERROR MESSAGES 
          */
-        public static final int err_loading_view=0x7f060030;
-        public static final int err_noname=0x7f060031;
+        public static final int err_loading_view=0x7f060032;
+        public static final int err_noname=0x7f060033;
         /**  NAMEANDNOTE ACTIVITY 
          */
         public static final int felicitations=0x7f06000e;
@@ -171,8 +173,8 @@ public final class R {
         public static final int msg_motive_0=0x7f06000b;
         public static final int msg_motive_1=0x7f06000c;
         public static final int msg_motive_2=0x7f06000d;
-        public static final int msg_screenmode=0x7f060027;
-        public static final int msg_soundmode=0x7f060026;
+        public static final int msg_screenmode=0x7f060029;
+        public static final int msg_soundmode=0x7f060028;
         /**  HOME ACTIVITY 
          */
         public static final int new_session=0x7f060003;
@@ -182,21 +184,21 @@ public final class R {
         public static final int oui=0x7f060012;
         public static final int pomodoro_desc=0x7f060024;
         public static final int settings=0x7f060006;
-        public static final int str_im_coffee=0x7f060029;
-        public static final int str_im_facebook=0x7f06002a;
-        public static final int str_im_internet=0x7f06002e;
-        public static final int str_im_linkedin=0x7f06002c;
-        public static final int str_im_mail=0x7f06002d;
+        public static final int str_im_coffee=0x7f06002b;
+        public static final int str_im_facebook=0x7f06002c;
+        public static final int str_im_internet=0x7f060030;
+        public static final int str_im_linkedin=0x7f06002e;
+        public static final int str_im_mail=0x7f06002f;
         /**  SLIDING IMAGES 
          */
-        public static final int str_im_message=0x7f060028;
-        public static final int str_im_music=0x7f06002b;
-        public static final int str_im_twitter=0x7f06002f;
+        public static final int str_im_message=0x7f06002a;
+        public static final int str_im_music=0x7f06002d;
+        public static final int str_im_twitter=0x7f060031;
         public static final int submit=0x7f06000f;
         public static final int three_star=0x7f06001a;
         public static final int timerPauseVal=0x7f060021;
         public static final int timerVal=0x7f06000a;
-        /**  HELP ACTIVITY 
+        /**  ABOUT ACTIVITY 
          */
         public static final int title_activity_help=0x7f060022;
         /**  HISTORY ACTIVITY 
@@ -210,8 +212,10 @@ public final class R {
         public static final int title_activity_pause=0x7f06001f;
         /**  SETTINGS ACTIVITY 
          */
-        public static final int title_activity_settings=0x7f060025;
+        public static final int title_activity_settings=0x7f060027;
         public static final int two_star=0x7f060019;
+        public static final int video_description=0x7f060026;
+        public static final int video_link=0x7f060025;
     }
     public static final class style {
         /** 

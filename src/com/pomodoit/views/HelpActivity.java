@@ -1,13 +1,16 @@
 package com.pomodoit.views;
 
-import com.pomodoit.joeybr.R;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.pomodoit.joeybr.R;
 
 public class HelpActivity extends Activity {
 
@@ -20,24 +23,23 @@ public class HelpActivity extends Activity {
 		ActionBar bar = getActionBar();
 		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed))));
 
+		ImageView imYoutubePomo = (ImageView) findViewById(R.id.ivYoutubePomodoro);
+		imYoutubePomo.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v) {
+				// With this line the Youtube application, if installed, will launch immediately.
+				// Without it you will be prompted with a list of the application to choose.
+				String video_path = getResources().getString(R.string.video_link);
+				Uri uri = Uri.parse(video_path);
+				uri = Uri.parse("vnd.youtube:"  + uri.getQueryParameter("v"));
+
+				// Star playing video (Youtube or other application)
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(intent);
+			}
+		});
 	}
 
 	//
-	// ACTION BAR
+	// NO ACTION BAR
 	//
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.help, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 }

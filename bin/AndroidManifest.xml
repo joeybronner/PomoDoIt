@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="17"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="21" />
     
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
@@ -63,18 +63,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pomodoit.views.HomeActivity" />
         </activity>
+        <!-- ABOUT ACTIVITY -->
         <activity
             android:name="com.pomodoit.views.HelpActivity"
             android:label="@string/title_activity_help"
-            android:parentActivityName="com.pomodoit.views.HomeActivity" >
+            android:parentActivityName="com.pomodoit.views.HomeActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pomodoit.views.HomeActivity" />
         </activity>
+        <!-- SETTINGS ACTIVITY -->
         <activity
             android:name="com.pomodoit.views.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="com.pomodoit.views.HomeActivity" >
+            android:parentActivityName="com.pomodoit.views.HomeActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pomodoit.views.HomeActivity" />

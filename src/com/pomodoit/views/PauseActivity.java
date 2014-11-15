@@ -10,14 +10,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
+
+import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.joeybr.R;
 import com.pomodoit.util.Constants;
+import com.pomodoit.util.Utilities;
 
 public class PauseActivity extends Activity {
 
@@ -27,6 +31,7 @@ public class PauseActivity extends Activity {
 	long timeSwapBuff = 0L;
 	long updatedTime = 0L;
 	protected ProgressBar mProgressBar;
+	MySQLiteHelper db = new MySQLiteHelper(this);
 	
 	// Elements
 	private TextView tvPauseTitle, tvTimerPause;
@@ -52,6 +57,11 @@ public class PauseActivity extends Activity {
         // Viewflipper declaration and Start Flipping
         ViewFlipper flipper = (ViewFlipper) findViewById(R.id.flipper);
         flipper.startFlipping();
+        
+		// Stay screen on if parameter is true
+		if (db.getScreenMode()==true) {
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		}
         
         // Calculate and Set Flipper's Padding        
         int paddingPixel = 80;
@@ -97,7 +107,7 @@ public class PauseActivity extends Activity {
 			final int progress = (int) (mProgressBar.getMax() * timeInMilliseconds / timeSwapBuff);
 	        mProgressBar.setProgress(progress);
 	        
-	        if (isFinishedTimer(mins, secs, milliseconds))
+	        if (Utilities.isFinishedTimer(mins, secs, milliseconds))
 	        {
 	        	customHandler.removeCallbacks(this);
 	        	showNewSession();
@@ -152,17 +162,5 @@ public class PauseActivity extends Activity {
 	{
 		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
-	}
-	
-	private boolean isFinishedTimer(int _m, int _s, int _ms)
-	{
-		if(_m == 0 && _s == 0 && _ms == 0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
 	}
 }
