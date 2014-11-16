@@ -11,10 +11,11 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int cinnabar=0x7f050003;
         public static final int fontDarkRed=0x7f050001;
         public static final int fontGreen=0x7f050002;
         public static final int fontRed=0x7f050000;
-        public static final int white=0x7f050003;
+        public static final int white=0x7f050004;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -159,11 +160,12 @@ public final class R {
         public static final int btStart=0x7f070007;
         public static final int btStop=0x7f070008;
         public static final int defaultvalue=0x7f070016;
-        public static final int err_activate_planemode=0x7f070034;
+        public static final int err_activate_planemode=0x7f070036;
         /**  ERROR MESSAGES 
          */
-        public static final int err_loading_view=0x7f070032;
-        public static final int err_noname=0x7f070033;
+        public static final int err_loading_view=0x7f070033;
+        public static final int err_nameexists=0x7f070035;
+        public static final int err_noname=0x7f070034;
         /**  NAMEANDNOTE ACTIVITY 
          */
         public static final int felicitations=0x7f07000e;
@@ -171,15 +173,16 @@ public final class R {
         public static final int four_star=0x7f07001b;
         public static final int help=0x7f070005;
         public static final int history=0x7f070004;
-        public static final int imPomodoro_description=0x7f070023;
+        public static final int imPomodoro_description=0x7f070024;
         public static final int irealized=0x7f070015;
-        public static final int msgPause=0x7f070020;
+        public static final int msgPause=0x7f070021;
+        public static final int msg_delete_activity=0x7f07001f;
         public static final int msg_delete_history=0x7f07001e;
         public static final int msg_motive_0=0x7f07000b;
         public static final int msg_motive_1=0x7f07000c;
         public static final int msg_motive_2=0x7f07000d;
-        public static final int msg_screenmode=0x7f070029;
-        public static final int msg_soundmode=0x7f070028;
+        public static final int msg_screenmode=0x7f07002a;
+        public static final int msg_soundmode=0x7f070029;
         /**  HOME ACTIVITY 
          */
         public static final int new_session=0x7f070003;
@@ -187,25 +190,25 @@ public final class R {
         public static final int nouvellesession=0x7f070011;
         public static final int one_star=0x7f070018;
         public static final int oui=0x7f070012;
-        public static final int pomodoro_desc=0x7f070024;
+        public static final int pomodoro_desc=0x7f070025;
         public static final int settings=0x7f070006;
-        public static final int str_im_coffee=0x7f07002b;
-        public static final int str_im_facebook=0x7f07002c;
-        public static final int str_im_internet=0x7f070030;
-        public static final int str_im_linkedin=0x7f07002e;
-        public static final int str_im_mail=0x7f07002f;
+        public static final int str_im_coffee=0x7f07002c;
+        public static final int str_im_facebook=0x7f07002d;
+        public static final int str_im_internet=0x7f070031;
+        public static final int str_im_linkedin=0x7f07002f;
+        public static final int str_im_mail=0x7f070030;
         /**  SLIDING IMAGES 
          */
-        public static final int str_im_message=0x7f07002a;
-        public static final int str_im_music=0x7f07002d;
-        public static final int str_im_twitter=0x7f070031;
+        public static final int str_im_message=0x7f07002b;
+        public static final int str_im_music=0x7f07002e;
+        public static final int str_im_twitter=0x7f070032;
         public static final int submit=0x7f07000f;
         public static final int three_star=0x7f07001a;
-        public static final int timerPauseVal=0x7f070021;
+        public static final int timerPauseVal=0x7f070022;
         public static final int timerVal=0x7f07000a;
         /**  ABOUT ACTIVITY 
          */
-        public static final int title_activity_help=0x7f070022;
+        public static final int title_activity_help=0x7f070023;
         /**  HISTORY ACTIVITY 
          */
         public static final int title_activity_history=0x7f070014;
@@ -214,13 +217,13 @@ public final class R {
         public static final int title_activity_new_session=0x7f070010;
         /**  PAUSE ACTIVITY 
          */
-        public static final int title_activity_pause=0x7f07001f;
+        public static final int title_activity_pause=0x7f070020;
         /**  SETTINGS ACTIVITY 
          */
-        public static final int title_activity_settings=0x7f070027;
+        public static final int title_activity_settings=0x7f070028;
         public static final int two_star=0x7f070019;
-        public static final int video_description=0x7f070026;
-        public static final int video_link=0x7f070025;
+        public static final int video_description=0x7f070027;
+        public static final int video_link=0x7f070026;
     }
     public static final class style {
         /** 

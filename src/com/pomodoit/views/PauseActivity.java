@@ -88,7 +88,7 @@ public class PauseActivity extends Activity {
 		public void run()
 		{
 			//timeSwapBuff = 60000*5; // 5 minutes
-			timeSwapBuff = 1000*25;
+			timeSwapBuff = 100*25;
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
 

@@ -43,6 +43,7 @@
     <string name="five_star">\u2605\u2605\u2605\u2605\u2605</string>
     <string name="action_delete_history">Delete history</string>
     <string name="msg_delete_history">Are you sure you want to delete all history?</string>
+    <string name="msg_delete_activity">Are you sure you want to delete this activity?</string>
 
     <!-- PAUSE ACTIVITY -->
     <string name="title_activity_pause">Taking a break from work</string>
@@ -74,6 +75,7 @@
     <!-- ERROR MESSAGES -->
     <string name="err_loading_view">Error while loading a new view</string>
     <string name="err_noname">Error: Please give a name of your activity</string>
+    <string name="err_nameexists">Error: Name already exists</string>
     <string name="err_activate_planemode">Error: Unable to activate plane mode</string>
     
  

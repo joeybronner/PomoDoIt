@@ -40,7 +40,7 @@ public class MainActivity extends Activity
 	protected static Context cont;
 	MySQLiteHelper db = new MySQLiteHelper(this);
 	Resources res;
-	
+
 	MediaPlayer mp;
 
 	// Elements
@@ -72,10 +72,10 @@ public class MainActivity extends Activity
 		// Type Face Font for message text view
 		tvMessage = (TextView) findViewById(R.id.tvMessage);
 		tvMessage.setTypeface(Constants.tf);
-		
+
 		// Resources
 		res = getResources();
-		
+
 		// Stay screen on if parameter is true
 		if (db.getScreenMode()==true) {
 			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -115,7 +115,25 @@ public class MainActivity extends Activity
 				}
 			}
 		});
+	}
 
+	@Override
+	protected void onStop() {
+		super.onStop();
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// Stop timer thread and kill activity 
+		customHandler.removeCallbacks(updateTimerThread);
+		this.finish();
+		super.onDestroy();
+	}
+
+	@Override
+	public void onBackPressed() {
+		onDestroy();
+		super.onBackPressed();
 	}
 
 	private Runnable updateTimerThread = new Runnable()
@@ -124,7 +142,7 @@ public class MainActivity extends Activity
 		public void run()
 		{
 			//timeSwapBuff = 60000*25;
-			timeSwapBuff = 1000*25;
+			timeSwapBuff = 100*25;
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
 
@@ -138,7 +156,7 @@ public class MainActivity extends Activity
 					+ 	":"
 					+ 	String.format("%02d", milliseconds));
 			customHandler.postDelayed(this, 0);
-			
+
 			// Image Clock
 			if (secs<5) {
 				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock55));
@@ -173,7 +191,7 @@ public class MainActivity extends Activity
 			if (Utilities.isFinishedTimer(mins, secs, milliseconds))
 			{
 				customHandler.removeCallbacks(this);
-				// Play sound if activated
+				// Play sound if activated (in settings)
 				if (db.getSoundMode()==true) {
 					playSound();
 				}
@@ -181,6 +199,22 @@ public class MainActivity extends Activity
 			}
 		}
 	};
+
+	private void playSound() {
+		try {	
+			mp = MediaPlayer.create(this, R.raw.sound);
+			mp.start();
+		} catch (Exception err) {
+			Toaster.displayToast(MainActivity.this.getBaseContext(),
+					getResources().getString(R.string.err_activate_planemode));
+		}
+	}
+
+	private void showPauseView()
+	{
+		Intent intent = new Intent(this, PauseActivity.class);
+		startActivity(intent);
+	}
 
 	private void showNameAndNote()
 	{
@@ -207,14 +241,21 @@ public class MainActivity extends Activity
 					} else {
 						// Increment Round (number of rounds)
 						Constants.round++;
-						
+
 						// Send Name & Note to Database
 						String name = etName.getText().toString();
 						float mark = stars.getRating();
-						db.addSession(new Session(name, mark));
-						dialog.dismiss();
-						showPauseView();
-						finish();
+						Session s = new Session(name, mark);
+						if (db.uniqueSession(s)==true) {
+							db.addSession(s);
+							dialog.dismiss();
+							showPauseView();
+							finish();
+						} else {
+							Toaster.displayToast(MainActivity.this.getBaseContext(), 
+									getResources().getString(R.string.err_nameexists), 
+									3000);
+						}
 					}
 				} catch (Exception ex) {
 					// Nothing.
@@ -224,25 +265,4 @@ public class MainActivity extends Activity
 
 		dialog.show();
 	}
-	
-	private void playSound() {
-		try {	
-			mp = MediaPlayer.create(this, R.raw.sound);
-			mp.start();
-			Toaster.displayToast(MainActivity.this.getBaseContext(),
-					"Maintenant, je joue un son.");
-		
-		} catch (Exception err) {
-			Toaster.displayToast(MainActivity.this.getBaseContext(),
-					getResources().getString(R.string.err_activate_planemode));
-		}
-	}
-
-	private void showPauseView()
-	{
-		Intent intent = new Intent(this, PauseActivity.class);
-		startActivity(intent);
-	}
-
-
 }

@@ -19,10 +19,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.pomodoit.joeybr.R;
 import com.pomodoit.adapter.ListViewAdapter;
 import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.db.Session;
+import com.pomodoit.joeybr.R;
 import com.pomodoit.util.DateFormater;
 
 @SuppressWarnings("rawtypes")
@@ -30,8 +30,8 @@ public class HistoryActivity extends Activity {
 
 	// Global variables
 	private ArrayList<HashMap> list;
-	MySQLiteHelper db = new MySQLiteHelper(this);
-
+	public MySQLiteHelper db = new MySQLiteHelper(this); 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -149,8 +149,10 @@ public class HistoryActivity extends Activity {
 	};
 	
 	@Override
-	protected void onResume() {
+	public void onResume() {
 	   super.onResume();
-	   this.onCreate(null);
+	   super.onCreate(null);
 	}
+	
+
 }

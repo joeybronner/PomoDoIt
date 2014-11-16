@@ -2,27 +2,39 @@ package com.pomodoit.adapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import com.pomodoit.joeybr.R;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.pomodoit.db.MySQLiteHelper;
+import com.pomodoit.joeybr.R;
+
 @SuppressWarnings("rawtypes")
 public class ListViewAdapter extends BaseAdapter
 {
+
 	public ArrayList<HashMap> list;
 	Activity activity;
+	String sessionName;
 
 	public ListViewAdapter(Activity activity, ArrayList<HashMap> list) {
 		super();
 		this.activity = activity;
 		this.list = list;
 	}
+	
+	public void updateAdapter() {
+        notifyDataSetChanged();
+    }
 
 	@Override
 	public int getCount() {
@@ -46,8 +58,8 @@ public class ListViewAdapter extends BaseAdapter
 	}
 
 	@SuppressLint("ResourceAsColor") @Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
+	public View getView(int position, View convertView, final ViewGroup parent) {
+		final ViewHolder holder;
 		LayoutInflater inflater =  activity.getLayoutInflater();
 
 		if (convertView == null)
@@ -60,11 +72,10 @@ public class ListViewAdapter extends BaseAdapter
 
 			// Alternate color line of ListView
 			if(position%2==0) {
-				holder.txtFirst.setBackgroundColor(R.color.fontDarkRed);
-				holder.txtSecond.setBackgroundColor(R.color.fontDarkRed);
-				holder.txtThird.setBackgroundColor(R.color.fontDarkRed);
+				holder.txtFirst.setBackgroundColor(Color.parseColor("#C0392B"));
+				holder.txtSecond.setBackgroundColor(Color.parseColor("#C0392B"));
+				holder.txtThird.setBackgroundColor(Color.parseColor("#C0392B"));
 			}
-
 			convertView.setTag(holder);
 		}
 		else
@@ -76,7 +87,44 @@ public class ListViewAdapter extends BaseAdapter
 		holder.txtFirst.setText((CharSequence)map.get("First"));
 		holder.txtSecond.setText((CharSequence)map.get("Second"));
 		holder.txtThird.setText((CharSequence)map.get("Third"));
+		
+		convertView.setOnLongClickListener(new OnLongClickListener()
+		{
+			@Override
+			public boolean onLongClick(View v)
+			{ 
+				sessionName = holder.txtSecond.getText().toString();
+				AlertDialog.Builder ab = new AlertDialog.Builder(parent.getContext());
+				ab.setMessage(parent.getResources().getString(R.string.msg_delete_activity))
+				.setPositiveButton(parent.getResources().getString(R.string.oui), 
+						dialogDeleteLine)
+				.setNegativeButton(parent.getResources().getString(R.string.non), 
+						dialogDeleteLine).show();
+				return true;
+			}
+		});
 
 		return convertView;
 	}
+
+	DialogInterface.OnClickListener dialogDeleteLine = new DialogInterface.OnClickListener()
+	{
+		@Override
+		public void onClick(DialogInterface dialog, int which)
+		{
+			final MySQLiteHelper db = new MySQLiteHelper(activity.getBaseContext());
+			switch (which)
+			{
+			case DialogInterface.BUTTON_POSITIVE:
+				// Delete entry and refresh view
+				db.deleteSession(sessionName);
+				updateAdapter();
+				break;
+
+			case DialogInterface.BUTTON_NEGATIVE:
+				// Nothing
+				break;
+			}
+		}
+	};
 }

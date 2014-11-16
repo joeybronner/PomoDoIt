@@ -127,6 +127,22 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 		// 3. insert
 		db.insert(TABLE_SESSIONS,null,values); 
 	}
+	
+    public boolean uniqueSession(Session ses)
+    {
+    	String query = 	"SELECT * FROM " + TABLE_SESSIONS + 
+    			" WHERE " 	+ KEY_NAME + " = \"" + ses.getName() + "\"";
+
+    	SQLiteDatabase db = this.getWritableDatabase();
+    	Cursor cursor = db.rawQuery(query, null);
+
+    	if (cursor.moveToFirst())
+    	{
+    		return false;
+    	}
+
+    	return true;
+    }
 
 	public void deleteAllSessions()
 	{
@@ -137,6 +153,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 		db.delete(TABLE_SESSIONS,
 				KEY_ID + " >= ?",
 				new String[] { "0" });
+	}
+	
+	public void deleteSession(String name) {
+		// 1. get reference to writable DB
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		// 2. delete
+		db.delete(TABLE_SESSIONS,
+				KEY_NAME + " = ?",
+				new String[] { name });
 	}
 
 	public boolean getSoundMode()
@@ -246,7 +272,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 
 		// 3. go over each row, build session and add it to list
 		Session ses = null;
-		if (cursor.moveToFirst())
+		if (cursor.moveToLast())
 		{
 			do {
 				ses = new Session();
@@ -257,7 +283,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper
 
 				// Add ses to sess
 				sess.add(ses);
-			} while (cursor.moveToNext());
+			} while (cursor.moveToPrevious());
 		}
 
 		// return all sessions

@@ -30,8 +30,8 @@
         android:id="@+id/ThirdText"
         android:layout_width="0dp"
 		android:layout_height="40dp"
-        android:layout_weight="1.5"
-        android:gravity="center_vertical"
+        android:layout_weight="2"
+        android:gravity="right|center_vertical"
         android:singleLine="true"
         android:text="Third"
         android:textColor="@color/white" >
