@@ -4,7 +4,6 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -212,8 +211,7 @@ public class MainActivity extends Activity
 
 	private void showPauseView()
 	{
-		Intent intent = new Intent(this, PauseActivity.class);
-		startActivity(intent);
+		Utilities.openView(this, PauseActivity.class);
 	}
 
 	private void showNameAndNote()

@@ -3,7 +3,6 @@ package com.pomodoit.views;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -154,13 +153,11 @@ public class PauseActivity extends Activity {
 	
 	private void showHomeView()
 	{
-		Intent intent = new Intent(this, HomeActivity.class);
-		startActivity(intent);
+		Utilities.openView(this, HomeActivity.class);
 	}
 	
 	private void showMainView()
 	{
-		Intent intent = new Intent(this, MainActivity.class);
-		startActivity(intent);
+		Utilities.openView(this, MainActivity.class);
 	}
 }

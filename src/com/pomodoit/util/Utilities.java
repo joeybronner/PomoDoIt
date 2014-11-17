@@ -1,9 +1,11 @@
 package com.pomodoit.util;
 
+import android.content.Context;
+import android.content.Intent;
+
 public class Utilities {
 
-	public static boolean isFinishedTimer(int _m, int _s, int _ms)
-	{
+	public static boolean isFinishedTimer(int _m, int _s, int _ms) {
 		if(_m == 0 && _s == 0 && _ms == 0)
 		{
 			return true;
@@ -12,6 +14,11 @@ public class Utilities {
 		{
 			return false;
 		}
+	}
+	
+	public static void openView(Context c, Class<?> cla) {
+		Intent intent = new Intent(c, cla);
+		c.startActivity(intent);
 	}
 
 }

@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.joeybr.R;
+import com.pomodoit.util.Utilities;
+import com.pomodoit.views.HistoryActivity;
 
 @SuppressWarnings("rawtypes")
 public class ListViewAdapter extends BaseAdapter
@@ -31,10 +33,6 @@ public class ListViewAdapter extends BaseAdapter
 		this.activity = activity;
 		this.list = list;
 	}
-	
-	public void updateAdapter() {
-        notifyDataSetChanged();
-    }
 
 	@Override
 	public int getCount() {
@@ -118,9 +116,10 @@ public class ListViewAdapter extends BaseAdapter
 			case DialogInterface.BUTTON_POSITIVE:
 				// Delete entry and refresh view
 				db.deleteSession(sessionName);
-				updateAdapter();
-				break;
-
+				notifyDataSetChanged();
+				Utilities.openView(activity, HistoryActivity.class);
+				// Close this one
+				activity.finish();
 			case DialogInterface.BUTTON_NEGATIVE:
 				// Nothing
 				break;

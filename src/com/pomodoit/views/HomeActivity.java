@@ -3,7 +3,6 @@ package com.pomodoit.views;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -24,6 +23,7 @@ import android.widget.Toast;
 import com.pomodoit.joeybr.R;
 import com.pomodoit.util.Config;
 import com.pomodoit.util.Constants;
+import com.pomodoit.util.Utilities;
 
 public class HomeActivity extends Activity implements OnItemClickListener
 {
@@ -77,23 +77,19 @@ public class HomeActivity extends Activity implements OnItemClickListener
 		String icon_selected = ICONS[position].map;
 		if (icon_selected.equals("new_activity"))
 		{
-			Intent intent = new Intent(this, MainActivity.class);
-			startActivity(intent);
+			Utilities.openView(this, MainActivity.class);
 		}
 		else if (icon_selected.equals("historique"))
 		{
-			Intent intent = new Intent(this, HistoryActivity.class);
-			startActivity(intent);
+			Utilities.openView(this, HistoryActivity.class);
 		}
 		else if (icon_selected.equals("help"))
 		{
-			Intent intent = new Intent(this, HelpActivity.class);
-			startActivity(intent);
+			Utilities.openView(this, HelpActivity.class);
 		}
 		else if (icon_selected.equals("settings"))
 		{
-			Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
+			Utilities.openView(this, SettingsActivity.class);
 		}
 		else
 		{
