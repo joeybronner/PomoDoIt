@@ -39,13 +39,17 @@ public class MainActivity extends Activity
 	protected static Context cont;
 	MySQLiteHelper db = new MySQLiteHelper(this);
 	Resources res;
-
 	MediaPlayer mp;
 
 	// Elements
 	private TextView tvTimer, tvMessage;
 	private Button bt;
-
+	
+	// Texts
+	String[] quotes;
+	int i = 0;
+	boolean change = true;
+	
 	public Handler customHandler = new Handler();
 
 	@Override
@@ -92,7 +96,6 @@ public class MainActivity extends Activity
 				// Start Session
 				if (bt.getText().equals(getResources().getString(R.string.btStart)))
 				{
-					tvMessage.setText(getResources().getString(R.string.msg_motive_1));
 					startTime = SystemClock.uptimeMillis();
 					customHandler.postDelayed(updateTimerThread, 0);
 					bt.setText(getResources().getString(R.string.btStop));
@@ -140,10 +143,13 @@ public class MainActivity extends Activity
 		@Override
 		public void run()
 		{
-			//timeSwapBuff = 60000*25;
-			timeSwapBuff = 100*25;
+			timeSwapBuff = 60000*25;
+			//timeSwapBuff = 100*25;
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
+			
+			// Get all quotes from resources
+			quotes = MainActivity.this.getResources().getStringArray(R.array.msg_motive); 
 
 			int secs = (int) (updatedTime / 1000);
 			int mins = secs / 60;
@@ -168,6 +174,7 @@ public class MainActivity extends Activity
 			} else if (secs > 20 && secs <= 25) {
 				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock35));
 			} else if (secs > 25 && secs <= 30) {
+				change = true;
 				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock30));
 			} else if (secs > 30 && secs <= 35) {
 				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock25));
@@ -182,8 +189,19 @@ public class MainActivity extends Activity
 			} else if (secs > 55) {
 				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock00));
 			}
+			
+			// Change quotes
+			if (secs == 59 && milliseconds == 0.00 && change == true) {
+				tvMessage.setText(quotes[i]);
+				change = false;
+				if (i==9) {
+					i = 0;
+				} else {
+					i++;
+				}
+			}
 
-			/* Progress Bar Update */
+			// Progress Bar Update
 			final int progress = (int) (mProgressBar.getMax() * timeInMilliseconds / timeSwapBuff);
 			mProgressBar.setProgress(progress);
 
@@ -221,6 +239,7 @@ public class MainActivity extends Activity
 		// no title
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
 		dialog.setCancelable(false);
+		
 		// content of the dialog
 		dialog.setContentView(R.layout.activity_name_and_note);
 		Button btSubmit = (Button) dialog.findViewById(R.id.btSubmit);
@@ -260,7 +279,6 @@ public class MainActivity extends Activity
 				}
 			}
 		});
-
 		dialog.show();
 	}
 }

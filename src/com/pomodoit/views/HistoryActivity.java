@@ -24,6 +24,7 @@ import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.db.Session;
 import com.pomodoit.joeybr.R;
 import com.pomodoit.util.DateFormater;
+import com.pomodoit.util.Utilities;
 
 @SuppressWarnings("rawtypes")
 public class HistoryActivity extends Activity {
@@ -138,7 +139,7 @@ public class HistoryActivity extends Activity {
 			case DialogInterface.BUTTON_POSITIVE:
 				// Delete History
 				db.deleteAllSessions();
-				onResume();
+				recreateView();
 				break;
 
 			case DialogInterface.BUTTON_NEGATIVE:
@@ -147,6 +148,11 @@ public class HistoryActivity extends Activity {
 			}
 		}
 	};
+	
+	private void recreateView() {
+		Utilities.openView(this, HistoryActivity.class);
+		this.finish();
+	}
 	
 	@Override
 	public void onResume() {

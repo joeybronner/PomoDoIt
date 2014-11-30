@@ -86,8 +86,13 @@ public class PauseActivity extends Activity {
 		@Override
 		public void run()
 		{
-			//timeSwapBuff = 60000*5; // 5 minutes
-			timeSwapBuff = 100*25;
+			if (Constants.round % 4 == 0) {
+				timeSwapBuff = 240000*5; // 20 minutes
+			} else {
+				timeSwapBuff = 100*25;
+				// timeSwapBuff = 60000*5; 5 minutes
+			}
+			
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
 
@@ -102,7 +107,7 @@ public class PauseActivity extends Activity {
 						+ 	String.format("%02d", milliseconds));
 			customHandler.postDelayed(this, 0);
 			
-			/* Progress Bar Update */
+			// Progress Bar Update
 			final int progress = (int) (mProgressBar.getMax() * timeInMilliseconds / timeSwapBuff);
 	        mProgressBar.setProgress(progress);
 	        
@@ -130,6 +135,7 @@ public class PauseActivity extends Activity {
 			@Override
 			public void onClick(View v)
 			{
+				Constants.round = 0;
 				dialog.dismiss();
 				finish();
 				showHomeView();
@@ -159,5 +165,11 @@ public class PauseActivity extends Activity {
 	private void showMainView()
 	{
 		Utilities.openView(this, MainActivity.class);
+	}
+	
+	@Override
+	protected void onStop() {
+		Constants.round = 0;
+		super.onStop();
 	}
 }
