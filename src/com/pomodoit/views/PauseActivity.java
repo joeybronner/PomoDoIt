@@ -8,14 +8,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
 
 import com.pomodoit.db.MySQLiteHelper;
 import com.pomodoit.joeybr.R;
@@ -41,8 +42,13 @@ public class PauseActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
+		Log.v("JOEY", "pause1");
+		
 		super.onCreate(savedInstanceState);
+		Log.v("JOEY", "savedinstancestate ok");
 		setContentView(R.layout.activity_pause);
+		
+		Log.v("JOEY", "pause2");
 		
 		// Action Bar Color
         ActionBar bar = getActionBar();
@@ -53,10 +59,6 @@ public class PauseActivity extends Activity {
         tvPauseTitle.setTypeface(Constants.tf);
         tvPauseTitle.setTextSize(30);
         
-        // Viewflipper declaration and Start Flipping
-        ViewFlipper flipper = (ViewFlipper) findViewById(R.id.flipper);
-        flipper.startFlipping();
-        
 		// Stay screen on if parameter is true
 		if (db.getScreenMode()==true) {
 			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -66,7 +68,8 @@ public class PauseActivity extends Activity {
         int paddingPixel = 80;
         float density = this.getResources().getDisplayMetrics().density;
         int paddingDp = (int)(paddingPixel * density);
-        flipper.setPadding(paddingDp,paddingDp,paddingDp,paddingDp);
+        ImageView ivCoffee = (ImageView) findViewById(R.id.ivCoffee);
+        ivCoffee.setPadding(paddingDp,paddingDp,paddingDp,paddingDp);
         
         // ProgressBar
         mProgressBar = (ProgressBar)findViewById(R.id.progressBarPause);
@@ -89,7 +92,7 @@ public class PauseActivity extends Activity {
 			if (Constants.round % 4 == 0) {
 				timeSwapBuff = 240000*5; // 20 minutes
 			} else {
-				timeSwapBuff = 100*25;
+				timeSwapBuff = 1000*35;
 				// timeSwapBuff = 60000*5; 5 minutes
 			}
 			

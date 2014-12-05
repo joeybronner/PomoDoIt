@@ -9,7 +9,7 @@
     <!-- HOME ACTIVITY -->
     <string name="new_session">New session</string>
     <string name="history">History</string>
-    <string name="help">Help</string>
+    <string name="help">About</string>
     <string name="settings">Settings</string>
 
     <!-- MAIN ACTIVITY : from here http://www.lifehack.org/articles/productivity/33-rules-boost-your-productivity.html -->

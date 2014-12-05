@@ -52,6 +52,7 @@
             android:screenOrientation="portrait"
             android:logo="@drawable/ic_launcher" >
         </activity>
+        <!-- NEW SESSION ACTIVITY -->
         <activity
             android:name="com.pomodoit.views.NewSessionActivity"
             android:label="@string/title_activity_new_session" >

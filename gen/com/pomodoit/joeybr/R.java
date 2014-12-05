@@ -52,68 +52,62 @@ public final class R {
         public static final int im_clock50=0x7f020011;
         public static final int im_clock55=0x7f020012;
         public static final int im_coffee=0x7f020013;
-        public static final int im_facebook=0x7f020014;
-        public static final int im_histo=0x7f020015;
-        public static final int im_internet=0x7f020016;
-        public static final int im_linkedin=0x7f020017;
-        public static final int im_mail=0x7f020018;
-        public static final int im_message=0x7f020019;
-        public static final int im_music=0x7f02001a;
-        public static final int im_plane=0x7f02001b;
-        public static final int im_playsound=0x7f02001c;
-        public static final int im_pomodoro=0x7f02001d;
-        public static final int im_preferences=0x7f02001e;
-        public static final int im_start=0x7f02001f;
-        public static final int im_twitter=0x7f020020;
-        public static final int im_youtube_pomodoro=0x7f020021;
-        public static final int pomodoit_btn_rating_star_off_focused_holo_light=0x7f020022;
-        public static final int pomodoit_btn_rating_star_off_normal_holo_light=0x7f020023;
-        public static final int pomodoit_btn_rating_star_off_pressed_holo_light=0x7f020024;
-        public static final int pomodoit_btn_rating_star_on_focused_holo_light=0x7f020025;
-        public static final int pomodoit_btn_rating_star_on_normal_holo_light=0x7f020026;
-        public static final int pomodoit_btn_rating_star_on_pressed_holo_light=0x7f020027;
-        public static final int pomodoit_textfield_activated_holo_light=0x7f020028;
-        public static final int pomodoit_textfield_default_holo_light=0x7f020029;
-        public static final int pomodoit_textfield_disabled_focused_holo_light=0x7f02002a;
-        public static final int pomodoit_textfield_disabled_holo_light=0x7f02002b;
-        public static final int pomodoit_textfield_focused_holo_light=0x7f02002c;
-        public static final int progressbar_color=0x7f02002d;
-        public static final int progressbar_color_pause=0x7f02002e;
-        public static final int ratingbar_empty_style=0x7f02002f;
-        public static final int ratingbar_filled_style=0x7f020030;
-        public static final int ratingbar_style=0x7f020031;
-        public static final int task_ok=0x7f020032;
-        public static final int tomato2=0x7f020033;
+        public static final int im_histo=0x7f020014;
+        public static final int im_playsound=0x7f020015;
+        public static final int im_pomodoro=0x7f020016;
+        public static final int im_preferences=0x7f020017;
+        public static final int im_start=0x7f020018;
+        public static final int im_twitter=0x7f020019;
+        public static final int im_youtube_pomodoro=0x7f02001a;
+        public static final int pomodoit_btn_rating_star_off_focused_holo_light=0x7f02001b;
+        public static final int pomodoit_btn_rating_star_off_normal_holo_light=0x7f02001c;
+        public static final int pomodoit_btn_rating_star_off_pressed_holo_light=0x7f02001d;
+        public static final int pomodoit_btn_rating_star_on_focused_holo_light=0x7f02001e;
+        public static final int pomodoit_btn_rating_star_on_normal_holo_light=0x7f02001f;
+        public static final int pomodoit_btn_rating_star_on_pressed_holo_light=0x7f020020;
+        public static final int pomodoit_textfield_activated_holo_light=0x7f020021;
+        public static final int pomodoit_textfield_default_holo_light=0x7f020022;
+        public static final int pomodoit_textfield_disabled_focused_holo_light=0x7f020023;
+        public static final int pomodoit_textfield_disabled_holo_light=0x7f020024;
+        public static final int pomodoit_textfield_focused_holo_light=0x7f020025;
+        public static final int progressbar_color=0x7f020026;
+        public static final int progressbar_color_pause=0x7f020027;
+        public static final int ratingbar_empty_style=0x7f020028;
+        public static final int ratingbar_filled_style=0x7f020029;
+        public static final int ratingbar_style=0x7f02002a;
+        public static final int task_ok=0x7f02002b;
+        public static final int tomato2=0x7f02002c;
     }
     public static final class id {
-        public static final int FirstText=0x7f0b0020;
-        public static final int SecondText=0x7f0b0021;
-        public static final int ThirdText=0x7f0b0022;
-        public static final int action_delete_history=0x7f0b0024;
-        public static final int action_settings=0x7f0b0023;
+        public static final int FirstText=0x7f0b0021;
+        public static final int SecondText=0x7f0b0022;
+        public static final int ThirdText=0x7f0b0023;
+        public static final int action_delete_history=0x7f0b0025;
+        public static final int action_settings=0x7f0b0024;
         public static final int btMain=0x7f0b000c;
         public static final int btNo=0x7f0b0014;
         public static final int btSubmit=0x7f0b0011;
         public static final int btYes=0x7f0b0015;
         public static final int dashboard_grid=0x7f0b0008;
-        public static final int dashboard_icon_img=0x7f0b001d;
-        public static final int dashboard_icon_text=0x7f0b001e;
+        public static final int dashboard_icon_img=0x7f0b001e;
+        public static final int dashboard_icon_text=0x7f0b001f;
         public static final int etName=0x7f0b000f;
-        public static final int flipper=0x7f0b0019;
+        public static final int ivCoffee=0x7f0b0019;
         public static final int ivEmoticon=0x7f0b0007;
         public static final int ivPomodoro=0x7f0b0000;
-        public static final int ivSoundScreen=0x7f0b001a;
+        public static final int ivSoundScreen=0x7f0b001b;
         public static final int ivTaskOk=0x7f0b0012;
         public static final int ivYoutubePomodoro=0x7f0b0002;
         public static final int listview=0x7f0b0006;
         public static final int mainActivity=0x7f0b0009;
+        public static final int pauseActivity=0x7f0b0016;
         public static final int progressBar=0x7f0b000a;
-        public static final int progressBarPause=0x7f0b0016;
+        public static final int progressBarPause=0x7f0b0017;
         public static final int ratingSession=0x7f0b0010;
-        public static final int relativeLayout1=0x7f0b001f;
-        public static final int switchScreenMode=0x7f0b001c;
-        public static final int switchSoundMode=0x7f0b001b;
-        public static final int timerPauseValue=0x7f0b0017;
+        public static final int relativeLayout1=0x7f0b0020;
+        public static final int switchScreenMode=0x7f0b001d;
+        public static final int switchSoundMode=0x7f0b001c;
+        public static final int timerPauseValue=0x7f0b0018;
         public static final int timerValue=0x7f0b000b;
         public static final int tvCount=0x7f0b0004;
         public static final int tvDescription=0x7f0b0001;
@@ -122,7 +116,7 @@ public final class R {
         public static final int tvIntro=0x7f0b0003;
         public static final int tvMessage=0x7f0b000d;
         public static final int tvNewSession=0x7f0b0013;
-        public static final int tvPauseTitle=0x7f0b0018;
+        public static final int tvPauseTitle=0x7f0b001a;
     }
     public static final class layout {
         public static final int activity_help=0x7f030000;
@@ -154,22 +148,26 @@ public final class R {
         public static final int action_settings=0x7f070002;
         public static final int activities=0x7f07001f;
         /**  APP GLOBAL 
+ APP GLOBAL 
          */
         public static final int app_name=0x7f070000;
         public static final int app_slogan=0x7f070001;
         public static final int btEnd=0x7f070009;
-        /**  MAIN ACTIVITY 
+        /**  MAIN ACTIVITY : from here http://www.lifehack.org/articles/productivity/33-rules-boost-your-productivity.html 
+ MAIN ACTIVITY : from here http://www.lifehack.org/articles/productivity/33-rules-boost-your-productivity.html 
          */
         public static final int btStart=0x7f070007;
         public static final int btStop=0x7f070008;
         public static final int defaultvalue=0x7f07001e;
         public static final int err_activate_planemode=0x7f07003e;
         /**  ERROR MESSAGES 
+ ERROR MESSAGES 
          */
         public static final int err_loading_view=0x7f07003b;
         public static final int err_nameexists=0x7f07003d;
         public static final int err_noname=0x7f07003c;
         /**  NAMEANDNOTE ACTIVITY 
+ NAMEANDNOTE ACTIVITY 
          */
         public static final int felicitations=0x7f070016;
         public static final int five_star=0x7f070024;
@@ -195,6 +193,7 @@ public final class R {
         public static final int msg_screenmode=0x7f070032;
         public static final int msg_soundmode=0x7f070031;
         /**  HOME ACTIVITY 
+ HOME ACTIVITY 
          */
         public static final int new_session=0x7f070003;
         public static final int non=0x7f07001b;
@@ -209,6 +208,7 @@ public final class R {
         public static final int str_im_linkedin=0x7f070037;
         public static final int str_im_mail=0x7f070038;
         /**  SLIDING IMAGES 
+ SLIDING IMAGES 
          */
         public static final int str_im_message=0x7f070033;
         public static final int str_im_music=0x7f070036;
@@ -218,18 +218,23 @@ public final class R {
         public static final int timerPauseVal=0x7f07002a;
         public static final int timerVal=0x7f07000a;
         /**  ABOUT ACTIVITY 
+ ABOUT ACTIVITY 
          */
         public static final int title_activity_help=0x7f07002b;
         /**  HISTORY ACTIVITY 
+ HISTORY ACTIVITY 
          */
         public static final int title_activity_history=0x7f07001c;
         /**  NEWSESSION ACTIVITY 
+ NEWSESSION ACTIVITY 
          */
         public static final int title_activity_new_session=0x7f070018;
         /**  PAUSE ACTIVITY 
+ PAUSE ACTIVITY 
          */
         public static final int title_activity_pause=0x7f070028;
         /**  SETTINGS ACTIVITY 
+ SETTINGS ACTIVITY 
          */
         public static final int title_activity_settings=0x7f070030;
         public static final int two_star=0x7f070021;

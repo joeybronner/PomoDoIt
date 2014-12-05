@@ -59,7 +59,7 @@ public class MainActivity extends Activity
 		setContentView(R.layout.activity_main);
 
 		cont = this.getBaseContext();
-
+		
 		// Action Bar Color
 		ActionBar bar = getActionBar();
 		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed))));
@@ -144,7 +144,7 @@ public class MainActivity extends Activity
 		public void run()
 		{
 			timeSwapBuff = 60000*25;
-			//timeSwapBuff = 100*25;
+			timeSwapBuff = 2000*25;
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
 			

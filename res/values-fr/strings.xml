@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- APP GLOBAL -->
+    <string name="app_name">PomoDoIt</string>
+    <string name="app_slogan">It\u0027s time to do it\u0021</string>
+    <string name="action_settings">Paramètres</string>
+
+    <!-- HOME ACTIVITY -->
+    <string name="new_session">Nouvelle activité</string>
+    <string name="history">Historique</string>
+    <string name="help">A propos</string>
+    <string name="settings">Paramètres</string>
+
+    <!-- MAIN ACTIVITY : from here http://www.lifehack.org/articles/productivity/33-rules-boost-your-productivity.html -->
+    <string name="btStart">Commencer!</string>
+    <string name="btStop">Arrêter</string>
+    <string name="btEnd">Fin</string>
+    <string name="timerVal">25:00:00</string>
+    <string name="msg_motive_0">HEY,\nÊTES-VOUS\nPRÊT ?!</string>
+    <string name="msg_motive_1">CONSEIL 1\nSTART\nSMALL.</string>
+    <string name="msg_motive_2">CONSEIL 2\nDAILY\nGOALS.</string>
+    <string name="msg_motive_3">CONSEIL 3\nNUKE\nIT!</string>
+    <string name="msg_motive_4">CONSEIL 4\nPEAK\nTIMES.</string>
+    <string name="msg_motive_5">CONSEIL 5\nMINI\nMILESTONES.</string>
+    <string name="msg_motive_6">CONSEIL 6\nSET\nA\nDEADLINE.</string>
+    <string name="msg_motive_7">CONSEIL 7\nTIMEBOXING.</string>
+    <string name="msg_motive_8">CONSEIL 8\nBATCH\nSIMILAR\nTASKS.</string>
+    <string name="msg_motive_9">CONSEIL 9\nCONE\nOF\nSILENCE.</string>
+    <string name="msg_motive_10">CONSEIL 10\nGET UP,\nEARLY.</string>
+    
+    <string-array name="msg_motive">
+        <item>@string/msg_motive_1</item>
+        <item>@string/msg_motive_2</item>
+        <item>@string/msg_motive_3</item>
+        <item>@string/msg_motive_4</item>
+        <item>@string/msg_motive_5</item>
+        <item>@string/msg_motive_6</item>
+        <item>@string/msg_motive_7</item>
+        <item>@string/msg_motive_8</item>
+        <item>@string/msg_motive_9</item>
+        <item>@string/msg_motive_10</item>
+    </string-array>
+
+    <!-- NAMEANDNOTE ACTIVITY -->
+    <string name="felicitations">FELICITATIONS\u0021</string>
+    <string name="submit">Ajouter</string>
+
+    <!-- NEWSESSION ACTIVITY -->
+    <string name="title_activity_new_session">Nouvelle activité</string>
+    <string name="nouvellesession">Voulez-vous commencer une nouvelle activité ?</string>
+    <string name="oui">Oui</string>
+    <string name="non">Non</string>
+
+    <!-- HISTORY ACTIVITY -->
+    <string name="title_activity_history">Historique</string>
+    <string name="irealized">J\u0027ai réalisé</string>
+    <string name="defaultvalue">-</string>
+    <string name="activities">activité(s).</string>
+    <string name="one_star">\u2605</string>
+    <string name="two_star">\u2605\u2605</string>
+    <string name="three_star">\u2605\u2605\u2605</string>
+    <string name="four_star">\u2605\u2605\u2605\u2605</string>
+    <string name="five_star">\u2605\u2605\u2605\u2605\u2605</string>
+    <string name="action_delete_history">Supprimer l\u0027historique</string>
+    <string name="msg_delete_history">Êtes-vous sûr de vouloir supprimer tout l\u0027historique ?</string>
+    <string name="msg_delete_activity">Êtes-vous sûr de vouloir supprimer cette activité ?</string>
+
+    <!-- PAUSE ACTIVITY -->
+    <string name="title_activity_pause">Prenez une pause</string>
+    <string name="msgPause">Coffee time, c\u0027est cool\u0021</string>
+    <string name="timerPauseVal">05:00:00</string>
+
+    <!-- ABOUT ACTIVITY -->
+    <string name="title_activity_help">A propos</string>
+    <string name="imPomodoro_description">Description Pomodoro</string>
+    <string name="pomodoro_desc">Pomodoro, c\u0027est quoi?</string>
+    <string name="video_link">https://www.youtube.com/watch?v=CT70iCaG0Gs</string>
+    <string name="video_description">La technique du Pomodoro</string>
+
+    <!-- SETTINGS ACTIVITY -->
+    <string name="title_activity_settings">Paramètres</string>
+    <string name="msg_soundmode">Jouer un son ?</string>
+    <string name="msg_screenmode">Ecran toujours allumé ?</string>
+
+    <!-- SLIDING IMAGES -->
+    <string name="str_im_message">Message</string>
+    <string name="str_im_coffee">Café</string>
+    <string name="str_im_facebook">Facebook</string>
+    <string name="str_im_music">Musique</string>
+    <string name="str_im_linkedin">LinkedIn</string>
+    <string name="str_im_mail">Mail</string>
+    <string name="str_im_internet">Internet</string>
+    <string name="str_im_twitter">Twitter</string>
+
+    <!-- ERROR MESSAGES -->
+    <string name="err_loading_view">Erreur pendant le chargement de la vue</string>
+    <string name="err_noname">Erreur: Veuillez donner un nom à votre activité</string>
+    <string name="err_nameexists">Erreur: Ce nom existe déjà</string>
+    <string name="err_activate_planemode">Erreur: Impossible d\u0027activer le mode avion</string>
+
+</resources>
