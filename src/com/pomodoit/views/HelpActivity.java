@@ -25,6 +25,7 @@ public class HelpActivity extends Activity {
 
 		ImageView imYoutubePomo = (ImageView) findViewById(R.id.ivYoutubePomodoro);
 		imYoutubePomo.setOnClickListener(new View.OnClickListener(){
+			@Override
 			public void onClick(View v) {
 				// With this line the Youtube application, if installed, will launch immediately.
 				// Without it you will be prompted with a list of the application to choose.
