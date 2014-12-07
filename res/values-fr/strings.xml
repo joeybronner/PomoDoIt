@@ -18,16 +18,16 @@
     <string name="btEnd">Fin</string>
     <string name="timerVal">25:00:00</string>
     <string name="msg_motive_0">HEY,\nÊTES-VOUS\nPRÊT ?!</string>
-    <string name="msg_motive_1">CONSEIL 1\nSTART\nSMALL.</string>
-    <string name="msg_motive_2">CONSEIL 2\nDAILY\nGOALS.</string>
-    <string name="msg_motive_3">CONSEIL 3\nNUKE\nIT!</string>
-    <string name="msg_motive_4">CONSEIL 4\nPEAK\nTIMES.</string>
-    <string name="msg_motive_5">CONSEIL 5\nMINI\nMILESTONES.</string>
-    <string name="msg_motive_6">CONSEIL 6\nSET\nA\nDEADLINE.</string>
-    <string name="msg_motive_7">CONSEIL 7\nTIMEBOXING.</string>
-    <string name="msg_motive_8">CONSEIL 8\nBATCH\nSIMILAR\nTASKS.</string>
-    <string name="msg_motive_9">CONSEIL 9\nCONE\nOF\nSILENCE.</string>
-    <string name="msg_motive_10">CONSEIL 10\nGET UP,\nEARLY.</string>
+    <string name="msg_motive_1">CONSEIL 1\nSACHEZ\nDIRE\nNON.</string>
+    <string name="msg_motive_2">CONSEIL 2\nBUTS\nJOURNALIERS.</string>
+    <string name="msg_motive_3">CONSEIL 3\nDEVELOPPEZ\nUNE\nROUTINE</string>
+    <string name="msg_motive_4">CONSEIL 4\nSOYEZ\nORGANISES.</string>
+    <string name="msg_motive_5">CONSEIL 5\nETAPES\nCOHERENTES.</string>
+    <string name="msg_motive_6">CONSEIL 6\nDEFINIR\nDES\nECHEANCES.</string>
+    <string name="msg_motive_7">CONSEIL 7\nORGANISATION\nAVANT\TOUT..</string>
+    <string name="msg_motive_8">CONSEIL 8\nELIMINEZ\nLES TÂCHES\nINUTILES.</string>
+    <string name="msg_motive_9">CONSEIL 9\nTRAVAILLEZ\nEN\nSILENCE.</string>
+    <string name="msg_motive_10">CONSEIL 10\nLEVEZ-VOUS,\nTOT.</string>
     
     <string-array name="msg_motive">
         <item>@string/msg_motive_1</item>

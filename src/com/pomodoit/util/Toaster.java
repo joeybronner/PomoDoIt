@@ -6,7 +6,6 @@ import android.widget.Toast;
 public class Toaster {
 	
 	/**
-	 * 
 	 * Simple method to display a message on screen (Toast)
 	 * For duration, 	2000ms = Toast.LENGTH_SHORT
 	 * 					3500ms = Toast.LENGTH_LONG

@@ -27,20 +27,16 @@ public class HelpActivity extends Activity {
 		imYoutubePomo.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				// With this line the Youtube application, if installed, will launch immediately.
+				// If Youtube is installed it will be launched
 				// Without it you will be prompted with a list of the application to choose.
 				String video_path = getResources().getString(R.string.video_link);
 				Uri uri = Uri.parse(video_path);
 				uri = Uri.parse("vnd.youtube:"  + uri.getQueryParameter("v"));
 
-				// Star playing video (Youtube or other application)
+				// Start playing video (Youtube or other application)
 				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 				startActivity(intent);
 			}
 		});
 	}
-
-	//
-	// NO ACTION BAR
-	//
 }

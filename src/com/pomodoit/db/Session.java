@@ -10,7 +10,7 @@ public class Session {
 	private float mark;
 	private String date;
 
-	// CONSTRUCTOR
+	// Constructor
 	public Session(String n, float m) {
 		this.name = n;
 		this.mark = m;
@@ -21,7 +21,7 @@ public class Session {
 		// Nothing.
 	}
 
-	// GETTER & SETTER
+	// Getter & Setter
 	public String getName() {
 		return name;
 	}

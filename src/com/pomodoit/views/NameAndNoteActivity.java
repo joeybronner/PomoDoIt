@@ -16,10 +16,6 @@ public class NameAndNoteActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_name_and_note);
 	}
-	
-	//
-	// PROTECTED
-	//
 
 	protected static boolean isFieldEmpty(String txt) {
 		String trimtxt = txt.trim();
@@ -30,10 +26,6 @@ public class NameAndNoteActivity extends Activity
 		}
 	}
 	
-	//
-	// PRIVATE
-	//
-
 	@SuppressWarnings("unused")
 	private String getTvFelicitations() {
 		return tvFelicitations.getText().toString();

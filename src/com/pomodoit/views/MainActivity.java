@@ -7,10 +7,12 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -44,12 +46,12 @@ public class MainActivity extends Activity
 	// Elements
 	private TextView tvTimer, tvMessage;
 	private Button bt;
-	
+
 	// Texts
 	String[] quotes;
 	int i = 0;
 	boolean change = true;
-	
+
 	public Handler customHandler = new Handler();
 
 	@Override
@@ -59,7 +61,7 @@ public class MainActivity extends Activity
 		setContentView(R.layout.activity_main);
 
 		cont = this.getBaseContext();
-		
+
 		// Action Bar Color
 		ActionBar bar = getActionBar();
 		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.fontRed))));
@@ -123,7 +125,7 @@ public class MainActivity extends Activity
 	protected void onStop() {
 		super.onStop();
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		// Stop timer thread and kill activity 
@@ -143,11 +145,10 @@ public class MainActivity extends Activity
 		@Override
 		public void run()
 		{
-			timeSwapBuff = 60000*25;
-			timeSwapBuff = 2000*25;
+			timeSwapBuff = 60000*25; // 25 minutes
 			timeInMilliseconds = SystemClock.uptimeMillis() - startTime;	
 			updatedTime = timeSwapBuff - timeInMilliseconds;
-			
+
 			// Get all quotes from resources
 			quotes = MainActivity.this.getResources().getStringArray(R.array.msg_motive); 
 
@@ -161,35 +162,10 @@ public class MainActivity extends Activity
 					+ 	":"
 					+ 	String.format("%02d", milliseconds));
 			customHandler.postDelayed(this, 0);
-
-			// Image Clock
-			if (secs<5) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock55));
-			} else if (secs > 5 && secs <= 10) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock50));
-			} else if (secs > 10 && secs <= 15) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock45));
-			} else if (secs > 15 && secs <= 20) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock40));
-			} else if (secs > 20 && secs <= 25) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock35));
-			} else if (secs > 25 && secs <= 30) {
-				change = true;
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock30));
-			} else if (secs > 30 && secs <= 35) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock25));
-			} else if (secs > 35 && secs <= 40) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock20));
-			} else if (secs > 40 && secs <= 45) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock15));
-			} else if (secs > 45 && secs <= 50) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock10));
-			} else if (secs > 50 && secs <= 55) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock05));
-			} else if (secs > 55) {
-				tvMessage.setBackground(res.getDrawable(R.drawable.im_clock00));
-			}
 			
+			// Change background image (clock image)
+			tvMessage.setBackground(getImageClock(secs));
+
 			// Change quotes
 			if (secs == 59 && milliseconds == 0.00 && change == true) {
 				tvMessage.setText(quotes[i]);
@@ -239,7 +215,7 @@ public class MainActivity extends Activity
 		// no title
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
 		dialog.setCancelable(false);
-		
+
 		// content of the dialog
 		dialog.setContentView(R.layout.activity_name_and_note);
 		Button btSubmit = (Button) dialog.findViewById(R.id.btSubmit);
@@ -275,10 +251,42 @@ public class MainActivity extends Activity
 						}
 					}
 				} catch (Exception ex) {
-					// Nothing.
+					Log.v("PomoDoIt", "Error while send new session in detabase.");
 				}
 			}
 		});
 		dialog.show();
+	}
+
+	private Drawable getImageClock(int secs) {
+		// Image Clock
+		if (secs<5) {	
+			return res.getDrawable(R.drawable.im_clock55);
+		} else if (secs > 5 && secs <= 10) {
+			return res.getDrawable(R.drawable.im_clock50);
+		} else if (secs > 10 && secs <= 15) {
+			return res.getDrawable(R.drawable.im_clock45);
+		} else if (secs > 15 && secs <= 20) {
+			return res.getDrawable(R.drawable.im_clock40);
+		} else if (secs > 20 && secs <= 25) {
+			return res.getDrawable(R.drawable.im_clock35);
+		} else if (secs > 25 && secs <= 30) {
+			change = true;
+			return res.getDrawable(R.drawable.im_clock30);
+		} else if (secs > 30 && secs <= 35) {
+			return res.getDrawable(R.drawable.im_clock25);
+		} else if (secs > 35 && secs <= 40) {
+			return res.getDrawable(R.drawable.im_clock20);
+		} else if (secs > 40 && secs <= 45) {
+			return res.getDrawable(R.drawable.im_clock15);
+		} else if (secs > 45 && secs <= 50) {
+			return res.getDrawable(R.drawable.im_clock10);
+		} else if (secs > 50 && secs <= 55) {
+			return res.getDrawable(R.drawable.im_clock05);
+		} else if (secs > 55) {
+			return res.getDrawable(R.drawable.im_clock00);
+		} else {
+			return res.getDrawable(R.drawable.im_clock00);
+		}
 	}
 }
